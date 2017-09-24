@@ -1,0 +1,32 @@
+/* pages/mine/mine.wxss */
+
+.top ,.list-wrapper{
+  width: 100%;
+}
+
+.top {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 335rpx;
+  background: #f0f0f0;
+}
+
+.avatar {
+  width: 180rpx;
+  height: 180rpx;
+  margin-bottom: 22rpx;
+  border: 10rpx solid #ffffff;
+  border-radius: 50%;
+}
+
+.list-wrapper {
+  padding-left: 30rpx;
+}
+
+.list{
+  align-items: center;
+  height: 120rpx;
+  padding-left: 32rpx;
+  border-bottom: 1px dotted #c6c6c6;
+}

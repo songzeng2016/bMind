@@ -1,0 +1,11 @@
+<!--pages/mine/mine.wxml-->
+<view class='top flex'>
+    <image class='avatar'></image>
+    <text class='name'>songzeng</text>
+</view>
+
+<view class='list-wrapper'>
+    <view class='list flex' wx:for='{{list}}' wx:key='*list'>
+      <text>{{item.title}}</text>
+    </view>
+</view>
