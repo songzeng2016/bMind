@@ -8,7 +8,7 @@
 .content{padding: 0 25rpx;}
 .inspiration{border-bottom: dashed 1rpx #ccc;}
 .title{font-size: 24rpx;color: #333;font-weight: bold;padding: 20rpx 0;}
-.detail{font-size: 24rpx;color: #7c7c7c;line-height: 40rpx;}
+.detail{font-size: 24rpx;color: #7c7c7c;line-height: 40rpx;padding-bottom: 20rpx;}
 .content_img{width: 700rpx;}
 .img_list{padding-bottom: 20rpx;}
 button{margin-bottom: 60rpx;background: #c88e44;color: #fff;}
