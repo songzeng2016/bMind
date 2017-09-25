@@ -10,3 +10,4 @@
 .list_bottom{font-size: 24rpx;color: #666;padding-top: 18rpx;}
 .list_eye{width: 36rpx;height: 24rpx;}
 .list_day{display: inline-block;float: right;}
+.serSortList{position: absolute;text-align: center;width: 100%; background: #fff;}
