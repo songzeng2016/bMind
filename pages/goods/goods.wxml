@@ -1,2 +1,59 @@
-<!--pages/goods/goods.wxml-->
-<text>pages/goods/goods.wxml</text>
+<view>
+  <view class='search_top'>
+    <navigator url="" class="searchs">
+      <icon type="search" size="14" class="serIcon"></icon>
+      <text>搜索采购</text>
+    </navigator>
+  </view>
+  <view class='sort'>
+    <view class='sort_c' bindtap='classUnfold'>
+      {{classSortSelect}}
+      <image src='../../image/arowD.png' class='sort_img'></image>
+      <view class="serSortList" hidden="{{ !classPurSortOpen }}">
+        <radio-group bindchange="classSortChangeFn">
+          <block wx:for="{{classSortData}}" wx:key="id">
+            <label class="" data-item="{{item}}" bindtap="">
+              <view class="serSortListItL">
+                <radio value="{{item.name}}" checked="{{item.checked}}" hidden="true" />{{item.name}}
+              </view>
+            </label>
+          </block>
+        </radio-group>
+      </view>
+    </view>|
+    <view class='sort_c' bindtap='placeUnfold'>
+      {{placeSortSelect}}
+      <image src='../../image/arowD.png' class='sort_img'></image>
+      <view class="serSortList" hidden="{{ !placePurSortOpen }}">
+        <radio-group bindchange="placeSortChangeFn">
+          <block wx:for="{{placeSortData}}" wx:key="id">
+            <label class="" data-item="{{item}}" bindtap="">
+              <view class="serSortListItL">
+                <radio value="{{item.name}}" checked="{{item.checked}}" hidden="true" />{{item.name}}
+              </view>
+            </label>
+          </block>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+  <navigator url='../goodsDetail/goodsDetail'>
+    <view class='content'>
+      <view class='lists display_inb'>
+        <image class='list_img fl' src='../../image/1.jpg'></image>
+        <view class='list_content fr'>
+          <view class=' list_head '>标题题标题标题标题标题标题标题标题题标题标题标题标题标题标题标题题标题标题标题标题标题标题标题题标题标题标题标题标题标题标题题标题标题标题标题标题标题标题题标题标题标题标题标题标题标题题标题标题标题标题标题标题标题题标题标题标题标题标题标题</view>
+          <view class='list_details display_inb'>详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情</view>
+          <view class='list_price '>
+            <view class='display_inb price'>￥2800起</view>
+            <image src='../../image/collecting.png' class='list_collect fr'></image>
+          </view>
+        </view>
+
+
+      </view>
+    </view>
+  </navigator>
+
+
+</view>

@@ -1,0 +1,33 @@
+<view class="top">
+  <image class="top_img" src="../../image/2.jpg"></image>
+  <view class='top_msg'>预售中</view>
+</view>
+<view class='head'>
+  <view class='head_name fl'>CHEMEX物品名称</view>
+  <view class='head_money fr'>
+    ￥
+    <text>5200</text>起
+  </view>
+</view>
+<view class='content'>
+  <view class='inspiration'>
+    <view class='title'>设计灵感</view>
+    <view class='detail'>近几年，在这片独特的时尚土壤上，又萌发出一些设计简洁耐看、 材质上乘、做工精细的设计师品牌。
+    </view>
+  </view>
+  <view class='inspiration'>
+    <view class='title'>购买须知</view>
+    <view class='detail'>忙碌的日常生活中，一杯咖啡的时间常常能带来片刻的放松和休 憩。在种类繁多的器具中挑选出符合自己审美和使用习惯的一台， 也是选择一种有个人风格的“咖啡时光”吧。
+    </view>
+  </view>
+  <view>
+    <view class='title'>产品详图</view>
+    <view class='img_list'>
+      <image src='../../image/2.jpg' class='content_img'></image>
+    </view>
+     <view class='img_list'>
+      <image src='../../image/2.jpg' class='content_img'></image>
+    </view>
+  </view>
+  <button>我要咨询</button>
+</view>
