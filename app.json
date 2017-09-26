@@ -8,7 +8,8 @@
     "pages/logs/logs",
     "pages/goodsDetail/goodsDetail",
     "pages/courseDetail/courseDetail",
-    "module/banner/banner"
+    "module/banner/banner",
+    "module/filtrate/filtrate"
   ],
   "window": {
     "backgroundTextStyle": "light",

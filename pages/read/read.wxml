@@ -1,2 +1,75 @@
-<!--pages/read/read.wxml-->
-<text>pages/read/read.wxml</text>
+<import src="../../module/banner/banner.wxml" />
+<view class="top">
+   <template is="Banner" data="{{imgUrls}}"></template>
+</view>
+  <view class='search_top'>
+    <navigator url="" class="searchs">
+      <icon type="search" size="14" class="serIcon"></icon>
+      <text>课程收索</text>
+    </navigator>
+  </view>
+   <view class='sort'>
+    <view class='sort_c' bindtap='placeUnfold' data-type="0">
+      {{classSortSelect}}
+      <image src='../../image/arowD.png' class='sort_img'></image>
+      <view class="serSortList" hidden="{{ !classPurSortOpen }}">
+        <radio-group bindchange="classSortChangeFn">
+          <block wx:for="{{classSortData}}" wx:key="id">
+            <label class="" data-item="{{item}}" bindtap="">
+              <view class="serSortListItL">
+                <radio value="{{item.name}}" checked="{{item.checked}}" hidden="true" />{{item.name}}
+              </view>
+            </label>
+          </block>
+        </radio-group>
+      </view>
+    </view>|
+    <view class='sort_c' bindtap='placeUnfold' data-type="1">
+      {{placeSortSelect}}
+      <image src='../../image/arowD.png' class='sort_img'></image>
+      <view class="serSortList" hidden="{{ !placePurSortOpen }}">
+        <radio-group bindchange="placeSortChangeFn">
+          <block wx:for="{{placeSortData}}" wx:key="id">
+            <label class="" data-item="{{item}}" bindtap="">
+              <view class="serSortListItL">
+                <radio value="{{item.name}}" checked="{{item.checked}}" hidden="true" />{{item.name}}
+              </view>
+            </label>
+          </block>
+        </radio-group>
+      </view>
+    </view>|
+    <view class='sort_c' bindtap='placeUnfold' data-type="2">
+      {{placeSortSelect}}
+      <image src='../../image/arowD.png' class='sort_img'></image>
+      <view class="serSortList" hidden="{{ !placePurSortOpens }}">
+        <radio-group bindchange="placeSortChangeFn">
+          <block wx:for="{{placeSortData}}" wx:key="id">
+            <label class="" data-item="{{item}}" bindtap="">
+              <view class="serSortListItL">
+                <radio value="{{item.name}}" checked="{{item.checked}}" hidden="true" />{{item.name}}
+              </view>
+            </label>
+          </block>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+  <view class='lists'>
+    <view class='list'>
+       <image src='../../image/2.jpg' class='list_img'></image> 
+       <view class='list_con'>Be A Urban Gardener 当个都市园艺人</view>
+       <view class='list_bottom'>
+        <image src='../../image/eye.png' class='list_eye'></image><text>108</text> 
+        <view class='list_day'>15天前</view>
+       </view>
+    </view>
+    <view class='list'>
+       <image src='../../image/2.jpg' class='list_img'></image> 
+       <view class='list_con'>Be A Urban Gardener 当个都市园艺人</view>
+       <view class='list_bottom'>
+        <image src='../../image/eye.png' class='list_eye'></image><text>108</text> 
+        <view class='list_day'>15天前</view>
+       </view>
+    </view>
+  </view>
