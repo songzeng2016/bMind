@@ -8,7 +8,7 @@
     </navigator>
   </view>
    <view class='sort'>
-    <view class='sort_c' bindtap='classUnfold'>
+    <view class='sort_c' bindtap='placeUnfold' data-type="0">
       {{classSortSelect}}
       <image src='../../image/arowD.png' class='sort_img'></image>
       <view class="serSortList" hidden="{{ !classPurSortOpen }}">
@@ -23,7 +23,7 @@
         </radio-group>
       </view>
     </view>|
-    <view class='sort_c' bindtap='placeUnfold'>
+    <view class='sort_c' bindtap='placeUnfold' data-type="1">
       {{placeSortSelect}}
       <image src='../../image/arowD.png' class='sort_img'></image>
       <view class="serSortList" hidden="{{ !placePurSortOpen }}">
@@ -38,10 +38,10 @@
         </radio-group>
       </view>
     </view>|
-    <view class='sort_c' bindtap='placeUnfold'>
+    <view class='sort_c' bindtap='placeUnfold' data-type="2">
       {{placeSortSelect}}
       <image src='../../image/arowD.png' class='sort_img'></image>
-      <view class="serSortList" hidden="{{ !placePurSortOpen }}">
+      <view class="serSortList" hidden="{{ !placePurSortOpens }}">
         <radio-group bindchange="placeSortChangeFn">
           <block wx:for="{{placeSortData}}" wx:key="id">
             <label class="" data-item="{{item}}" bindtap="">

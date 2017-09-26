@@ -6,7 +6,8 @@
     "pages/mine/mine",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/goodsDetail/goodsDetail"
+    "pages/goodsDetail/goodsDetail",
+    "pages/courseDetail/courseDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
