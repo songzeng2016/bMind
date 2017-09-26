@@ -10,7 +10,7 @@
     </navigator>
   </view>
   <view class='sort'>
-    <block wx:for="{{list}}">
+    <block wx:for="{{list}}" wx:key='*list'>
       <view class='sort_c' bindtap='placeUnfold' data-index="{{index}}">
         {{item.placeSortSelect}}
         <image src='../../image/arowD.png' class='sort_img'></image>
