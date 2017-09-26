@@ -1,1 +1,4 @@
-/* module/filtrate/filtrate.wxss */
+.sort{height: 64rpx;line-height: 60rpx; border-bottom: solid 1rpx #ebe6e4; display: flex; color: #CDC5BF;}
+.sort_c{flex: 1;color: #333333;font-size: 24rpx;text-align: center;position: relative;border-right: 1rpx solid #CDC5BF;}
+.sort_img{height: 15rpx;width:30rpx;} 
+view :last-child{border: none;}

@@ -1,2 +1,19 @@
-<!--module/filtrate/filtrate.wxml-->
-<text>module/filtrate/filtrate.wxml</text>
+ <template name="Filtrate"> 
+     <block wx:for="{{list}}" wx:key='*list'>
+      <view class='sort_c' bindtap='placeUnfold' data-index="{{index}}">
+        {{item.placeSortSelect}}
+        <image src='../../image/arowD.png' class='sort_img'></image>
+        <view class="serSortList" hidden="{{ item.placePurSortOpen }}">
+          <radio-group bindchange="placeSortChangeFn">
+            <block wx:for="{{item.placeSortData}}" wx:key="id">
+              <label class="" data-item="{{item}}" bindtap="">
+                <view class="serSortListItL">
+                  <radio value="{{item.name}}" checked="{{item.checked}}" hidden="true" />{{item.name}}
+                </view>
+              </label>
+            </block>
+          </radio-group>
+        </view>
+      </view>
+    </block>
+ </template> 

@@ -4,28 +4,44 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
+  data: { 
     imgUrls: [
       "../../image/1.jpg",
       "../../image/2.jpg"
     ],
-    classPurSortOpen: false,
-    placePurSortOpen: false,
-    placePurSortOpens: false,
-    classSortData: [
-      { id: 100, name: '全部分类', checked: 'true' },
-      { id: 101, name: '妹子喜欢的' },
-      { id: 102, name: '帅哥喜欢的' },
-      { id: 103, name: '大妈喜欢的' }
+    list: [
+      {
+        placeSortSelect: "全部分类",
+        placePurSortOpen: true,
+        placeSortData: [
+          { id: 100, name: '全部分类', checked: 'true' },
+          { id: 101, name: '妹子喜欢的' },
+          { id: 102, name: '帅哥喜欢的' },
+          { id: 103, name: '大妈喜欢的' }
+        ],
+      },
+      {
+        placeSortSelect: "产地",
+        placePurSortOpen: true,
+        placeSortData: [
+          { id: 100, name: '产地', checked: 'true' },
+          { id: 101, name: '北京' },
+          { id: 102, name: '天津' },
+          { id: 103, name: '上海' }
+        ],
+      },
+      {
+        placeSortSelect: "全部时间",
+        placePurSortOpen: true,
+        placeSortData: [
+          { id: 100, name: '全部时间', checked: 'true' },
+          { id: 101, name: '北京' },
+          { id: 102, name: '天津' },
+          { id: 103, name: '上海' }
+        ],
+      }
     ],
-    classSortSelect: "全部分类",
-    placeSortData: [
-      { id: 100, name: '产地', checked: 'true' },
-      { id: 101, name: '北京' },
-      { id: 102, name: '天津' },
-      { id: 103, name: '上海' }
-    ],
-    placeSortSelect: "产地",
+
   },
 
   /**
@@ -46,22 +62,16 @@ Page({
   },
   // 产地展开收起
   placeUnfold: function (e) {
-    var open = e.currentTarget.dataset.type
-    console.log(open)
-    if (open == 1) {
-      this.setData({
-        placePurSortOpen: !this.data.placePurSortOpen
-      });
-    } else if (open == 2) {
-      this.setData({
-        placePurSortOpens: !this.data.placePurSortOpens
-      });
-    } else if (open == 0) {
-      this.setData({
-        classPurSortOpen: !this.data.classPurSortOpen
-      });
+    // console.log(e)
+    var index = e.currentTarget.dataset.index;
+    var status = this.data.list[index].placePurSortOpen
+    var list = this.data.list
+ 
+    for(var i = 0;i<list.length;i++){
+      list[i].placePurSortOpen = true;
     }
-
+    list[index].placePurSortOpen = !status
+    this.setData({ list });
   },
   //产地筛选条件  change value
   placeSortChangeFn: function (e) {

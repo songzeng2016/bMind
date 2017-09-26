@@ -18,3 +18,4 @@ view, text, image, input {
   display: flex;
 }
 @import 'module/banner/banner.wxss';
+@import 'module/filtrate/filtrate.wxss';
