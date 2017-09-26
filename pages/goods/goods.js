@@ -5,22 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-    classPurSortOpen: false,
-    placePurSortOpen: false,
-    classSortData: [
-      { id: 100, name: '全部分类', checked: 'true' },
-      { id: 101, name: '妹子喜欢的' },
-      { id: 102, name: '帅哥喜欢的' },
-      { id: 103, name: '大妈喜欢的' }
+    imgUrls: [
+      "../../image/1.jpg",
+      "../../image/2.jpg"
     ],
-    classSortSelect: "全部分类",
-    placeSortData: [
-      { id: 100, name: '产地', checked: 'true' },
-      { id: 101, name: '北京' },
-      { id: 102, name: '天津' },
-      { id: 103, name: '上海' }
+
+    list:[
+      {
+        placeSortSelect: "全部分类",
+        placePurSortOpen: true,
+        classSortData: [
+          { id: 100, name: '全部分类', checked: 'true' },
+          { id: 101, name: '妹子喜欢的' },
+          { id: 102, name: '帅哥喜欢的' },
+          { id: 103, name: '大妈喜欢的' }
+        ],
+      },
+      {
+        placeSortSelect: "产地",
+        placePurSortOpen: true,
+        placeSortData: [
+          { id: 100, name: '产地', checked: 'true' },
+          { id: 101, name: '北京' },
+          { id: 102, name: '天津' },
+          { id: 103, name: '上海' }
+        ],
+      }
     ],
-    placeSortSelect: "产地",
   },
 
   /**
@@ -29,24 +40,13 @@ Page({
   onLoad: function (options) {
   
   },
-  // 分类展开收起
-  classUnfold: function (e) {
-    this.setData({
-      classPurSortOpen: !this.data.classPurSortOpen
-    });
-  },
-  // 分类筛选条件  change value
-  classSortChangeFn: function (e) {
-    let val = e.detail.value;
-    this.setData({
-      classSortSelect: val
-    });
-    //console.log('radio发生change事件，携带value值为：', e.detail.value)
-  },
+
   // 产地展开收起
   placeUnfold: function (e) {
+    console.log(e)
+    console.log(this.data.list[index].placePurSortOpen)
     this.setData({
-      placePurSortOpen: !this.data.placePurSortOpen
+      placePurSortOpen: !this.data.list.placePurSortOpen
     });
   },
   //产地筛选条件  change value

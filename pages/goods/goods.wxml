@@ -1,3 +1,7 @@
+<import src="../../module/banner/banner.wxml" />
+<view class="top">
+  <template is="Banner" data="{{imgUrls}}"></template>
+</view>
 <view>
   <view class='search_top'>
     <navigator url="" class="searchs">
@@ -6,7 +10,7 @@
     </navigator>
   </view>
   <view class='sort'>
-    <view class='sort_c' bindtap='classUnfold'>
+    <!-- <view class='sort_c' bindtap='classUnfold'>
       {{classSortSelect}}
       <image src='../../image/arowD.png' class='sort_img'></image>
       <view class="serSortList" hidden="{{ !classPurSortOpen }}">
@@ -20,22 +24,25 @@
           </block>
         </radio-group>
       </view>
-    </view>|
-    <view class='sort_c' bindtap='placeUnfold'>
-      {{placeSortSelect}}
-      <image src='../../image/arowD.png' class='sort_img'></image>
-      <view class="serSortList" hidden="{{ !placePurSortOpen }}">
-        <radio-group bindchange="placeSortChangeFn">
-          <block wx:for="{{placeSortData}}" wx:key="id">
-            <label class="" data-item="{{item}}" bindtap="">
-              <view class="serSortListItL">
-                <radio value="{{item.name}}" checked="{{item.checked}}" hidden="true" />{{item.name}}
-              </view>
-            </label>
-          </block>
-        </radio-group>
+    </view>| -->
+    <block wx:for="{{list}}">
+      <view class='sort_c' bindtap='placeUnfold'>
+        {{item.placeSortSelect}}
+        <image src='../../image/arowD.png' class='sort_img'></image>
+        <view class="serSortList" hidden="{{ item.placePurSortOpen }}">
+          <radio-group bindchange="placeSortChangeFn">
+            <block wx:for="{{item.placeSortData}}" wx:key="id">
+              <label class="" data-item="{{item}}" bindtap="">
+                <view class="serSortListItL">
+                  <radio value="{{item.name}}" checked="{{item.checked}}" hidden="true" />{{item.name}}
+                </view>
+              </label>
+            </block>
+          </radio-group>
+        </view>
       </view>
-    </view>
+    </block>
+
   </view>
   <navigator url='../goodsDetail/goodsDetail'>
     <view class='content'>

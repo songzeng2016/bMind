@@ -17,3 +17,4 @@ view, text, image, input {
 .flex {
   display: flex;
 }
+@import 'module/banner/banner.wxss';
