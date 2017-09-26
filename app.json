@@ -9,7 +9,8 @@
     "pages/goodsDetail/goodsDetail",
     "pages/courseDetail/courseDetail",
     "module/banner/banner",
-    "module/filtrate/filtrate"
+    "module/filtrate/filtrate",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

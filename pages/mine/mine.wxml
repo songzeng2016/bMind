@@ -1,6 +1,6 @@
 <!--pages/mine/mine.wxml-->
 <view class='top flex'>
-    <image class='avatar'></image>
+    <image class='avatar' src='/image/1.jpg'></image>
     <text class='name'>songzeng</text>
 </view>
 
