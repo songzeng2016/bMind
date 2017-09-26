@@ -1,5 +1,6 @@
+<import src="../../module/banner/banner.wxml" />
 <view class="top">
-
+   <template is="Banner" data="{{imgUrls}}"></template>
 </view>
   <view class='search_top'>
     <navigator url="" class="searchs">

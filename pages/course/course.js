@@ -5,6 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    imgUrls: [
+      "../../image/1.jpg",
+      "../../image/2.jpg"
+    ],
     classPurSortOpen: false,
     placePurSortOpen: false,
     placePurSortOpens:false,

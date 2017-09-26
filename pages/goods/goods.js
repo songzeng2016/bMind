@@ -14,7 +14,7 @@ Page({
       {
         placeSortSelect: "全部分类",
         placePurSortOpen: true,
-        classSortData: [
+        placeSortData: [
           { id: 100, name: '全部分类', checked: 'true' },
           { id: 101, name: '妹子喜欢的' },
           { id: 102, name: '帅哥喜欢的' },
@@ -43,11 +43,12 @@ Page({
 
   // 产地展开收起
   placeUnfold: function (e) {
-    console.log(e)
-    console.log(this.data.list[index].placePurSortOpen)
-    this.setData({
-      placePurSortOpen: !this.data.list.placePurSortOpen
-    });
+    // console.log(e)
+    var index = e.currentTarget.dataset.index;
+    var status = this.data.list[index].placePurSortOpen
+    var list = this.data.list
+    list[index].placePurSortOpen = !status
+    this.setData({list});
   },
   //产地筛选条件  change value
   placeSortChangeFn: function (e) {

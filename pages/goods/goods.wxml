@@ -10,23 +10,8 @@
     </navigator>
   </view>
   <view class='sort'>
-    <!-- <view class='sort_c' bindtap='classUnfold'>
-      {{classSortSelect}}
-      <image src='../../image/arowD.png' class='sort_img'></image>
-      <view class="serSortList" hidden="{{ !classPurSortOpen }}">
-        <radio-group bindchange="classSortChangeFn">
-          <block wx:for="{{classSortData}}" wx:key="id">
-            <label class="" data-item="{{item}}" bindtap="">
-              <view class="serSortListItL">
-                <radio value="{{item.name}}" checked="{{item.checked}}" hidden="true" />{{item.name}}
-              </view>
-            </label>
-          </block>
-        </radio-group>
-      </view>
-    </view>| -->
     <block wx:for="{{list}}">
-      <view class='sort_c' bindtap='placeUnfold'>
+      <view class='sort_c' bindtap='placeUnfold' data-index="{{index}}">
         {{item.placeSortSelect}}
         <image src='../../image/arowD.png' class='sort_img'></image>
         <view class="serSortList" hidden="{{ item.placePurSortOpen }}">
