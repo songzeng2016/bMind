@@ -48,6 +48,28 @@ Page({
 
   },
 
+  // 获取列表
+  getList: function({}) {
+    // list
+    let getData = {
+      Action: 'GetNewsList',
+      KeyWords: '',
+      ClassID: 0,
+      SortType: 0,
+      TimeType: 0,
+      pageSize: 10,
+      pageIndex: 1
+    }
+
+    wc.get(getData, (json) => {
+      if (json[isSuccess] === success) {
+        that.setData({
+          readList: json[data]
+        })
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
