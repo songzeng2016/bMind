@@ -23,7 +23,12 @@
           <view class='list_details display_inb'>{{item.ProductDesc}}</view>
           <view class='list_price '>
             <view class='display_inb price'>￥{{item.Price}}起</view>
-            <image src='/image/collecting.png' class='list_collect fr'></image>
+            <block wx:if="{{item.collect==true}}" bindtap="collectCut" data-index="{{index}}">
+              <image src='/image/collecting.png' class='list_collect fr'></image>
+            </block>
+            <block  wx:else bindtap="collectCut" data-index="{{index}}">
+              <image src='/image/collecting.png' class='list_collect fr'></image>
+            </block>
           </view>
         </view>
       </view>

@@ -16,9 +16,9 @@
   <template is="Filtrate" data="{{list}}"></template>
 </view>
 
-<view class='lists'>
-
-  <view class='list' wx:for='{{readList}}' wx:key='*readList'>
+<view class='lists' wx:for='{{readList}}' wx:key='*readList'>
+<navigator url='../readDetail/readDetail'>
+   <view class='list' >
     <image src='{{item.NewsPic}}' class='list_img'></image>
     <view class='list_con'>{{item.NewsTitle}}</view>
     <view class='list_bottom'>
@@ -27,15 +27,7 @@
       <view class='list_day'>15天前</view>
     </view>
   </view>
-
-  <!-- <view class='list'>
-    <image src='../../image/2.jpg' class='list_img'></image>
-    <view class='list_con'>Be A Urban Gardener 当个都市园艺人</view>
-    <view class='list_bottom'>
-      <image src='../../image/eye.png' class='list_eye'></image>
-      <text>108</text>
-      <view class='list_day'>15天前</view>
-    </view>
-  </view>  -->
+</navigator>
+ 
 
 </view>

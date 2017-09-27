@@ -1,17 +1,28 @@
-<view class="top">
-  <image class="top_img" src="../../image/2.jpg"></image>
-  <view class='top_msg'>1800</view>
-  <image src='../../image/eye.png' class='top_eye'></image>
+<!--pages/detail/detail.wxml-->
+<view class='banner'>
+  <image src='/iamge/' src='/image/2.jpg'></image>
+  <view class='sale'>预售中</view>
 </view>
-<view class='head'>
-  <view class='head_name fl'>小懒猫</view>
-  <text class='line fl'>|</text>
-  <view class='head_money fl'>
-    城市里辛勤耕作的美女农夫
-  </view>
-</view>
-<view class='content'>
-  <textarea  class='texts' disabled="false" value="{{content}}"  auto-height="true" maxlength="-1"></textarea>
 
+<view class='price-num flex'>
+  <view class='price-wrapper'>
+    <text>￥</text>
+    <text class='price'>5000</text>
+    <text> 起</text>
+  </view>
+  <text>已有2000人报名</text>
 </view>
-<view class='bottom'></view>
+
+<view class='time-place'>
+  <view class='time'></view>
+  <view class='place'></view>
+</view>
+
+<view class='list-wrapper'>
+  <view class='list' wx:for='{{list}}' wx:key='*this'>
+    <view class='title'>{{item.title}}</view>
+    <text class='desc'>{{item.desc}}</text>
+  </view>
+
+  <button class='button'>我要咨询</button>
+</view>

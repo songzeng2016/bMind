@@ -1,0 +1,17 @@
+<view class="top">
+  <image class="top_img" src="../../image/2.jpg"></image>
+  <view class='top_msg'>1800</view>
+  <image src='../../image/eye.png' class='top_eye'></image>
+</view>
+<view class='head'>
+  <view class='head_name fl'>小懒猫</view>
+  <text class='line fl'>|</text>
+  <view class='head_money fl'>
+    城市里辛勤耕作的美女农夫
+  </view>
+</view>
+<view class='content'>
+  <textarea  class='texts' disabled="false" value="{{content}}"  auto-height="true" maxlength="-1"></textarea>
+
+</view>
+<view class='bottom'></view>

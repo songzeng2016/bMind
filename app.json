@@ -8,7 +8,7 @@
     "pages/logs/logs",
     "pages/goodsDetail/goodsDetail",
     "pages/courseDetail/courseDetail",
-    "pages/detail/detail"
+    "pages/readDetail/readDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
