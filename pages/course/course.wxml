@@ -1,0 +1,37 @@
+<import src="../../module/banner/banner.wxml" />
+<import src="../../module/filtrate/filtrate.wxml" />
+<view class="top">
+  <template is="Banner" data="{{imgUrls}}"></template>
+</view>
+<view>
+  <view class='search_top'>
+
+    <navigator url="" class="searchs">
+      <icon type="search" size="14" class="serIcon"></icon>
+      <text>搜索采购</text>
+    </navigator>
+  </view>
+  <view class='sort'>
+    <template is="Filtrate" data="{{list}}"></template>
+  </view>
+  <navigator url='../courseDetail/courseDetail'>
+
+    <view class='content' wx:for='{{Data}}' wx:key='*Data'>
+      <view class='lists display_inb'>
+        <image class='list_img fl' src='{{item.CoursePic}}'></image>
+        <view class='list_content fr'>
+          <view class=' list_head'>
+            <text class='list_head_color'>|{{item.CourseTitle}}|</text> {{item.CourseDesc}}</view>
+          <view class='list_time list_head_color'>{{item.CourseTime}}</view>
+          <view class='list_details display_inb'>{{item.ProductDesc}}</view>
+          <view class='list_bottom'>
+            <image src='/image/eye.png' class='list_eye'></image>
+            <text>{{item.CourseHits}}</text>
+            <view class='list_day'>￥{{item.Price}}起</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </navigator>
+</view>

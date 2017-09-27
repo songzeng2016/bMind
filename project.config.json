@@ -12,12 +12,12 @@
 	"projectname": "xlgzs",
 	"condition": {
 		"weapp": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
 					"name": "11",
-					"pathName": "pages/goods/goods",
+					"pathName": "pages/course/course",
 					"query": ""
 				}
 			]

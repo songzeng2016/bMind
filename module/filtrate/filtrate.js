@@ -17,7 +17,7 @@ class Filtration {
       list[index].placePurSortOpen = !status
       page.setData({ list });
     },
-    //产地筛选条件  change value
+    // change value
     page.placeSortChangeFn= (e) => {
       let val = e.detail.value;
       var list = page.data.list
