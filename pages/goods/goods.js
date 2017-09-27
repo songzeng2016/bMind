@@ -1,4 +1,4 @@
-// pages/goods/goods.js
+import { Filtration } from '../../module/filtrate/filtrate'; //引入条件筛选
 const app = getApp()
 const { wc } = app
 const { host, data, isSuccess, success } = wc
@@ -75,25 +75,13 @@ Page({
         })
       }
     })
+
+    //引入条件筛选
+    var filtration = new Filtration(this);
+    filtration.bindEvents();  
   },
 
-  // 产地展开收起
-  placeUnfold: function (e) {
-    // console.log(e)
-    var index = e.currentTarget.dataset.index;
-    var status = this.data.list[index].placePurSortOpen
-    var list = this.data.list
-    list[index].placePurSortOpen = !status
-    this.setData({ list });
-  },
-  //产地筛选条件  change value
-  placeSortChangeFn: function (e) {
-    let val = e.detail.value;
-    this.setData({
-      placeSortSelect: val
-    });
-    //console.log('radio发生change事件，携带value值为：', e.detail.value)
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

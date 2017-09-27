@@ -3,8 +3,8 @@
       <view class='sort_c' bindtap='placeUnfold' data-index="{{index}}">
         {{item.placeSortSelect}}
         <image src='../../image/arowD.png' class='sort_img'></image>
-        <view class="serSortList" hidden="{{ item.placePurSortOpen }}">
-          <radio-group bindchange="placeSortChangeFn">
+        <view class="serSortList" hidden="{{ item.placePurSortOpen }}" >
+          <radio-group bindchange="placeSortChangeFn" data-index="{{index}}">
             <block wx:for="{{item.placeSortData}}" wx:key="id">
               <label class="" data-item="{{item}}" bindtap="">
                 <view class="serSortListItL">

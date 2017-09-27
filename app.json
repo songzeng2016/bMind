@@ -8,8 +8,6 @@
     "pages/logs/logs",
     "pages/goodsDetail/goodsDetail",
     "pages/courseDetail/courseDetail",
-    "module/banner/banner",
-    "module/filtrate/filtrate",
     "pages/detail/detail"
   ],
   "window": {
