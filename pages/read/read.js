@@ -1,10 +1,14 @@
 // pages/goods/goods.js
+const app = getApp()
+const { wc } = app
+const { host, data, isSuccess, success } = wc
+
 Page({
 
   /**
    * 页面的初始数据
    */
-  data: { 
+  data: {
     imgUrls: [
       "../../image/1.jpg",
       "../../image/2.jpg"
@@ -48,7 +52,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const that = this
+    let getData = {
+      Action: 'GetNewsList',
+      KeyWords: '',
+      ClassID: 0,
+      SortType: 0,
+      TimeType: 0,
+      pageSize: 10,
+      pageIndex: 1
+    }
 
+    wc.get(getData, (json) => {
+      if (json[isSuccess] === success) {
+        that.setData({
+          readList: json[data]
+        })
+      }
+    })
   },
   // 分类展开收起
 
@@ -66,8 +87,8 @@ Page({
     var index = e.currentTarget.dataset.index;
     var status = this.data.list[index].placePurSortOpen
     var list = this.data.list
- 
-    for(var i = 0;i<list.length;i++){
+
+    for (var i = 0; i < list.length; i++) {
       list[i].placePurSortOpen = true;
     }
     list[index].placePurSortOpen = !status
