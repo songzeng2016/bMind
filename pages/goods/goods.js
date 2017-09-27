@@ -82,6 +82,16 @@ Page({
   },
 
 
+//收藏切换
+  collectCut:function(e){
+    console.log(e)
+    var index = e.currentTarget.dataset.index;
+    var list = this.data.list
+    console.log(list)
+    list[index].praise = !(list[index].praise || false);
+    this.setData({ list })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
