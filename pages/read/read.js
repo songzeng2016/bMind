@@ -53,6 +53,21 @@ Page({
    */
   onLoad: function (options) {
     const that = this
+
+    // banner
+    let bData = {
+      Action: 'GetAd',
+      ClassID: 1
+    }
+    wc.get(bData, (json) => {
+      if (json[isSuccess] === success) {
+        that.setData({
+          imgUrls: json[data]
+        })
+      }
+    })
+
+    // list
     let getData = {
       Action: 'GetNewsList',
       KeyWords: '',
