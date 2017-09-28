@@ -22,10 +22,19 @@ class Filtration {
       let val = e.detail.value;
       var list = page.data.list
       var index = e.currentTarget.dataset.index;
+      console.log(e)
       list[index].placeSortSelect = val
       page.setData({ list });
       //console.log('radio发生change事件，携带value值为：', e.detail.value)
-    }
+    },
+     page.supSortChangeItemFn= (e) => {
+        //必须 用currentTarget 
+        var curItem = e.currentTarget.dataset.item;
+        console.log(curItem);
+        page.setData({
+          supSortSelectId: curItem.id
+        });
+      }
     //其它事件
   }
   //bindEvents :end;

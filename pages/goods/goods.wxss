@@ -9,7 +9,7 @@
 .list_details{color: #a19a8a;padding-top:20rpx; height: 112rpx; overflow: hidden;}
 .list_collect{width: 26rpx;height: 26rpx;vertical-align: middle;margin-top: 10rpx;}
 .list_price{height: 45rpx;}
-.list_cv{width: 50rpx;height: 50rpx;}
+.list_cv{width: 50rpx;height: 40rpx;}
 .price{vertical-align: middle;}
 .serSortList{z-index: 9999;position: absolute;text-align: center;width: 100%; background: #fff;}
 .display_inb{display: inline-block;}

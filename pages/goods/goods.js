@@ -14,6 +14,7 @@ Page({
       "../../image/2.jpg"
     ],
 
+    supSortSelectId: 100,
     list: [
       {
         placeSortSelect: "全部分类",

@@ -1,19 +1,23 @@
- <template name="Filtrate"> 
-     <block wx:for="{{list}}" wx:key='*list'>
-      <view class='sort_c' bindtap='placeUnfold' data-index="{{index}}">
-        {{item.placeSortSelect}}
-        <image src='../../image/arowD.png' class='sort_img'></image>
-        <view class="serSortList" hidden="{{ item.placePurSortOpen }}" >
-          <radio-group bindchange="placeSortChangeFn" data-index="{{index}}">
-            <block wx:for="{{item.placeSortData}}" wx:key="id">
-              <label class="" data-item="{{item}}" bindtap="">
-                <view class="serSortListItL">
-                  <radio value="{{item.name}}" checked="{{item.checked}}" hidden="true" />{{item.name}}
-                </view>
-              </label>
-            </block>
-          </radio-group>
-        </view>
+<template name="Filtrate">
+  <block wx:for="{{list}}" wx:key='*list'>
+    <view class='sort_c' bindtap='placeUnfold' data-index="{{index}}">
+      {{item.placeSortSelect}}
+      <image src='../../image/arowD.png' class='sort_img'></image>
+      <view class="serSortList" hidden="{{ item.placePurSortOpen }}">
+        <radio-group bindchange="placeSortChangeFn" data-index="{{index}}">
+          <block wx:for="{{item.placeSortData}}" wx:key="id" wx:for-item="item">
+            <label data-item="{{item}}" class=" {{item.id == supSortSelectId? 'serSortListItemAct':''}}" bindtap="supSortChangeItemFn">
+              <view class='serSort_border '>
+                <radio value="{{item.name}}" checked="{{item.checked}}" hidden="true" />{{item.name}}
+                <block wx:if="{{item.id != supSortSelectId}}">
+                  <icon class="serSortListItR_ok" type="success_no_circle" size="16" />
+                </block>
+              </view>
+
+            </label>
+          </block>
+        </radio-group>
       </view>
-    </block>
- </template> 
+    </view>
+  </block>
+</template>
