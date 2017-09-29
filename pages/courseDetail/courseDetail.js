@@ -1,4 +1,8 @@
 // pages/detail/detail.js
+const app = getApp()
+const { wc } = app
+const { host, data, isSuccess, success } = wc
+
 Page({
 
   /**
@@ -25,7 +29,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const that = this
+    let id = options.id
+    let getData = {
+      Action: 'GetCourseDetail',
+      ID: id || 12
+    }
 
+    wc.get(getData, (json) => {
+      if (json[isSuccess] === success) {
+        that.setData({
+          info: json[data]
+        })
+      }
+    })
   },
 
   /**

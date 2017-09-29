@@ -1,6 +1,6 @@
 <!--pages/detail/detail.wxml-->
 <view class='banner'>
-  <image src='/iamge/' src='/image/2.jpg'></image>
+  <image src='{{info.CoursePic}}'></image>
   <view class='sale'>预售中</view>
 </view>
 

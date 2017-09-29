@@ -14,9 +14,11 @@
   <view class='sort'>
     <template is="Filtrate" data="{{list}}"></template>
   </view>
-  <navigator url='../courseDetail/courseDetail'>
 
-    <view class='content' wx:for='{{Data}}' wx:key='*Data'>
+
+  <view class='content' wx:for='{{Data}}' wx:key='*Data'>
+
+    <navigator url='../courseDetail/courseDetail?id={{item.CourseID}}'>
       <view class='lists display_inb'>
         <image class='list_img fl' src='{{item.CoursePic}}'></image>
         <view class='list_content fr'>
@@ -31,7 +33,8 @@
           </view>
         </view>
       </view>
-    </view>
+    </navigator>
 
-  </navigator>
+  </view>
+
 </view>
