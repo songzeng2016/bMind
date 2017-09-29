@@ -1,6 +1,6 @@
 /* pages/mine/mine.wxss */
 
-.top ,.list-wrapper{
+.top, .list-wrapper {
   width: 100%;
 }
 
@@ -16,7 +16,7 @@
   width: 180rpx;
   height: 180rpx;
   margin-bottom: 22rpx;
-  border: 10rpx solid #ffffff;
+  border: 10rpx solid #fff;
   border-radius: 50%;
 }
 
@@ -24,9 +24,27 @@
   padding-left: 30rpx;
 }
 
-.list{
+.list {
   align-items: center;
+  justify-content: space-between;
   height: 120rpx;
-  padding-left: 32rpx;
+  padding: 0 32rpx;
   border-bottom: 1px dotted #c6c6c6;
+}
+
+.list .icon {
+  width: 32rpx;
+  height: 42rpx;
+  margin-right: 20rpx;
+  margin-bottom: -10rpx;
+}
+
+.list .text {
+  font-size: 30rpx;
+}
+
+.list .arowR {
+  float: right;
+  width: 20rpx;
+  height: 34rpx;
 }

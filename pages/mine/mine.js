@@ -2,7 +2,7 @@
 
 let list = [
   {
-    icon: 'image',
+    icon: 'mine',
     title: '我的收藏',
     path: 'myStar'
   },
@@ -14,6 +14,16 @@ let list = [
   {
     icon: 'image',
     title: '我的文章',
+    path: 'myStar'
+  },
+  {
+    icon: 'image',
+    title: '我的课程',
+    path: 'myStar'
+  },
+  {
+    icon: 'image',
+    title: '我的物品',
     path: 'myStar'
   }
 ]

@@ -1,11 +1,15 @@
 <!--pages/mine/mine.wxml-->
 <view class='top flex'>
-    <image class='avatar' src='/image/1.jpg'></image>
-    <text class='name'>songzeng</text>
+  <image class='avatar' src='/image/1.jpg'></image>
+  <text class='name'>songzeng</text>
 </view>
 
 <view class='list-wrapper'>
-    <view class='list flex' wx:for='{{list}}' wx:key='*list'>
-      <text>{{item.title}}</text>
+  <view class='list flex' wx:for='{{list}}' wx:key='*list'>
+    <view>
+      <image class='icon' src='/image/mine{{index + 1}}.png'></image>
+      <text class='text'>{{item.title}}</text>
     </view>
+    <image class='arowR' src='/image/arowR.png'></image>
+  </view>
 </view>
