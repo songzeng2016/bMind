@@ -10,7 +10,7 @@
               <view class='serSort_border '>
                 <radio value="{{item.name}}" checked="{{item.checked}}" hidden="true" />{{item.name}}
                 <block wx:if="{{item.id != supSortSelectId}}">
-                  <icon class="serSortListItR_ok" type="success_no_circle" size="16" />
+                  <icon class="serSortListItR_ok fr" color='#ebe6e4' type="success_no_circle" size="14" />
                 </block>
               </view>
 

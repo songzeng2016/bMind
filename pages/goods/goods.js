@@ -21,9 +21,9 @@ Page({
         placePurSortOpen: true,
         placeSortData: [
           { id: 100, name: '全部分类', checked: 'true' },
-          { id: 101, name: '妹子喜欢的' },
-          { id: 102, name: '帅哥喜欢的' },
-          { id: 103, name: '大妈喜欢的' }
+          { id: 101, name: '精品推存' },
+          { id: 102, name: '文艺青年' },
+          { id: 103, name: '炫酷风格' }
         ],
       },
       {
