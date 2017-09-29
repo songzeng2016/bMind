@@ -9,6 +9,6 @@
 .head_money text{font-size: 32rpx;color: #a79970;}
 .content{padding: 40rpx 30rpx;}
 .bottom{height: 50rpx;}
-.texts{width: 100%;font-size: 26rpx;color: #333;}
+.texts{width: 100%; line-height: 50rpx; font-size: 26rpx;color: #7d7d7d;}
 .fl{float: left;}
 .fr{float: right;}

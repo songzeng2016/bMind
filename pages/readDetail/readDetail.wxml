@@ -1,5 +1,5 @@
 <view class="top">
-  <image class="top_img" src="../../image/2.jpg"></image>
+  <image class="top_img" src="{{info.NewsPic}}"></image>
   <view class='top_msg'>1800</view>
   <image src='../../image/eye.png' class='top_eye'></image>
 </view>
@@ -11,7 +11,7 @@
   </view>
 </view>
 <view class='content'>
-  <textarea  class='texts' disabled="false" value="{{content}}"  auto-height="true" maxlength="-1"></textarea>
+  <textarea class='texts' disabled="false" value="{{info.NewsDesc}}" auto-height="true" maxlength="-1"></textarea>
 
 </view>
 <view class='bottom'></view>
