@@ -13,9 +13,10 @@
   <view class='sort'>
     <template is="Filtrate" data="{{list}}"></template>
   </view>
-  <navigator url='../goodsDetail/goodsDetail'>
 
-    <view class='content' wx:for='{{goodList}}' wx:key='*goodList'>
+  <view class='content' wx:for='{{goodList}}' wx:key='*goodList'>
+
+    <navigator url='../goodsDetail/goodsDetail?id={{item.ProductID}}'>
       <view class='lists display_inb'>
         <image class='list_img fl' src='{{item.ProductPic}}'></image>
         <view class='list_content fr'>
@@ -23,15 +24,17 @@
           <view class='list_details display_inb'>{{item.ProductDesc}}</view>
           <view class='list_price '>
             <view class='display_inb price'>￥{{item.Price}}起</view>
-            <view class='display_inb list_cv  fr'  catchtap="collectCut" data-index="{{index}}">
+            <view class='display_inb list_cv  fr' catchtap="collectCut" data-index="{{index}}">
               <image src="{{item.collect ? '/image/collecting.png':'/image/collect.png'}}" class='list_collect'></image>
             </view>
           </view>
         </view>
       </view>
-    </view>
+    </navigator>
 
-    <!-- <view class='content'>
+  </view>
+
+  <!-- <view class='content'>
       <view class='lists display_inb'>
         <image class='list_img fl' src='../../image/1.jpg'></image>
         <view class='list_content fr'>
@@ -44,7 +47,5 @@
         </view>
       </view>
     </view> -->
-
-  </navigator>
 
 </view>

@@ -12,6 +12,5 @@
 </view>
 <view class='content'>
   <textarea class='texts' disabled="false" value="{{info.NewsDesc}}" auto-height="true" maxlength="-1"></textarea>
-
 </view>
 <view class='bottom'></view>

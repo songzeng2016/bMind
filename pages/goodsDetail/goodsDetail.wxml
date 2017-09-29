@@ -1,5 +1,5 @@
 <view class="top">
-  <image class="top_img" src="../../image/2.jpg"></image>
+  <image class="top_img" src="{{info.ProductPic}}"></image>
   <view class='top_msg'>预售中</view>
 </view>
 <view class='head'>
@@ -25,7 +25,7 @@
     <view class='img_list'>
       <image src='../../image/2.jpg' class='content_img'></image>
     </view>
-     <view class='img_list'>
+    <view class='img_list'>
       <image src='../../image/2.jpg' class='content_img'></image>
     </view>
   </view>
