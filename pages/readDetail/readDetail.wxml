@@ -11,6 +11,7 @@
   </view>
 </view>
 <view class='content'>
-  <textarea class='texts' disabled="false" value="{{info.NewsDesc}}" auto-height="true" maxlength="-1"></textarea>
+  <!-- <textarea class='texts' disabled="false" value="{{info.NewsDesc}}" auto-height="true" maxlength="-1"></textarea> -->
+  <rich-text type='text' nodes="{{info.NewsDesc}}"></rich-text>
 </view>
 <view class='bottom'></view>
