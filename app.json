@@ -18,24 +18,32 @@
   },
   "tabBar": {
     "color": "#a6a194",
-    "selectedColor": "#d6d6d6",
+    "selectedColor": "#333333",
     "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/read/read",
-        "text": "| 阅读 |"
+        "text": "阅读",
+        "iconPath": "image/read.png",
+        "selectedIconPath": "image/read.png"
       },
       {
         "pagePath": "pages/course/course",
-        "text": "| 课程 |"
+        "text": "课程",
+        "iconPath": "image/course.png",
+        "selectedIconPath": "image/course.png"
       },
       {
         "pagePath": "pages/goods/goods",
-        "text": "| 物品 |"
+        "text": "物品",
+        "iconPath": "image/goods.png",
+        "selectedIconPath": "image/goods.png"
       },
       {
         "pagePath": "pages/mine/mine",
-        "text": "| 我的 |"
+        "text": "我的",
+        "iconPath": "image/mine.png",
+        "selectedIconPath": "image/mine.png"
       }
     ]
   }
