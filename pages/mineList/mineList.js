@@ -1,42 +1,18 @@
-// pages/mine/mine.js
-const app = getApp()
-const { wc } = app
-const { host, data, isSuccess, success } = wc
-
-let list = [
-  {
-    icon: 'image',
-    title: '在线客服',
-    path: 'myStar'
-  },
-  {
-    icon: 'image',
-    title: '我的文章',
-    path: 'myStar'
-  },
-  {
-    icon: 'image',
-    title: '我的课程',
-    path: 'myStar'
-  },
-  {
-    icon: 'image',
-    title: '我的物品',
-    path: 'myStar'
-  }
-]
-
+// pages/mineList/mineList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list,
-  },
-
-  navtoList: function (e) {
-    wc.navigateTo('/pages/mineList/mineList')
+    readList: [
+      {
+        NewsID: 13,
+        NewsPic: "https://sp.yangchengtech.com/upload/20170926/201709260726591777.png",
+        NewsTitle: "Be a urban gardener 当个园艺人23",
+        Price: 0
+      }
+    ]
   },
 
   /**

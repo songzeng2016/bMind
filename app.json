@@ -8,7 +8,8 @@
     "pages/logs/logs",
     "pages/goodsDetail/goodsDetail",
     "pages/courseDetail/courseDetail",
-    "pages/readDetail/readDetail"
+    "pages/readDetail/readDetail",
+    "pages/mineList/mineList"
   ],
   "window": {
     "backgroundTextStyle": "light",

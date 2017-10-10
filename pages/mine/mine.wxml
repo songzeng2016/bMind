@@ -5,7 +5,7 @@
 </view>
 
 <view class='list-wrapper'>
-  <view class='list flex' wx:for='{{list}}' wx:key='*list'>
+  <view class='list flex' wx:for='{{list}}' wx:key='*list' bindtap='navtoList'>
     <view>
       <image class='icon' src='/image/mine{{index + 1}}.png'></image>
       <text class='text'>{{item.title}}</text>

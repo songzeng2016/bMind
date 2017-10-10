@@ -1,21 +1,4 @@
-<import src="../../module/banner/banner.wxml" />
-<import src="../../module/filtrate/filtrate.wxml" />
-
-<view class="top">
-  <template is="Banner" data="{{imgUrls}}"></template>
-</view>
-
-<view class='search_top'>
-  <navigator url="" class="searchs">
-    <icon type="search" size="14" class="serIcon"></icon>
-    <text>课程收索</text>
-  </navigator>
-</view>
-
-<view class='sort'>
-  <template is="Filtrate" data="{{list}}"></template>
-</view>
-
+<!--pages/mineList/mineList.wxml-->
 <view class='lists' wx:for='{{readList}}' wx:key='*readList'>
   <navigator url='../readDetail/readDetail?id={{item.NewsID}}'>
     <view class='list'>

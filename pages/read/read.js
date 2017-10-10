@@ -99,6 +99,7 @@ Page({
 
     wc.get(getData, (json) => {
       if (json[isSuccess] === success) {
+        console.log(json[data])
         that.setData({
           readList: json[data]
         })
