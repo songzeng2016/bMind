@@ -5,7 +5,7 @@
 /* .serSortColor{color: red;} */
 .serSortListItemAct{ background: #f4f4f4; color: #09bb07; line-height: 20rpx;}
 .serSort_border{border-top: 1rpx solid #ebe6e4;}
-.serSortListItR_ok{ line-height: 28rpx;padding-top: 12rpx;padding-right: 10rpx;}
+.serSortListItR_ok{ line-height: 28rpx;padding-top: 12rpx;}
 .fl{float: left;}
 .fr{float: right;}
 .dis_block{display: inline-block;}

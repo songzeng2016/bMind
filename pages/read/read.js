@@ -25,13 +25,11 @@ Page({
         ],
       },
       {
-        placeSortSelect: "产地",
+        placeSortSelect: "最热",
         placePurSortOpen: true,
         placeSortData: [
-          { id: 100, name: '产地', checked: 'true' },
-          { id: 101, name: '北京' },
-          { id: 102, name: '天津' },
-          { id: 103, name: '上海' }
+          { id: 100, name: '最热', checked: 'true' },
+          { id: 101, name: '最新' }
         ],
       },
       {
@@ -39,9 +37,8 @@ Page({
         placePurSortOpen: true,
         placeSortData: [
           { id: 100, name: '全部时间', checked: 'true' },
-          { id: 101, name: '北京' },
-          { id: 102, name: '天津' },
-          { id: 103, name: '上海' }
+          { id: 101, name: '一周内' },
+          { id: 102, name: '一月内' }
         ],
       }
     ],

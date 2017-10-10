@@ -1,5 +1,7 @@
 <view class="top">
   <image class="top_img" src="{{info.NewsPic}}"></image>
+  <view class='top_title'>{{info.NewsTitle}}</view>
+  <view class='top_time'>2天前</view>
   <view class='top_msg'>1800</view>
   <image src='../../image/eye.png' class='top_eye'></image>
 </view>
@@ -12,6 +14,6 @@
 </view>
 <view class='content'>
   <!-- <textarea class='texts' disabled="false" value="{{info.NewsDesc}}" auto-height="true" maxlength="-1"></textarea> -->
-  <rich-text type='text' nodes="{{info.NewsDesc}}"></rich-text>
+  <rich-text class='texts' type='text' nodes="{{info.NewsDesc}}"></rich-text>
 </view>
 <view class='bottom'></view>
