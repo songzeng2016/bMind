@@ -26,7 +26,7 @@ class Filtration {
         list[index].placeSortSelect = val
         for (let i in list[index].placeSortData) {
           list[index].placeSortData[i].checked = false
-          if (list[index].placeSortData[i].name == val) {
+          if (list[index].placeSortData[i].ClassName == val) {
             list[index].placeSortData[i].checked = true
           }
         }
@@ -37,8 +37,9 @@ class Filtration {
         //必须 用currentTarget 
         var curItem = e.currentTarget.dataset.item;
         console.log(curItem);
+        page.getList(curItem)
         page.setData({
-          supSortSelectId: curItem.id
+          supSortSelectId: curItem.ClassID
         });
       }
     //其它事件

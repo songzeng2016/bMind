@@ -111,6 +111,26 @@ Page({
     //引入条件筛选
     var filtration = new Filtration(this);
     filtration.bindEvents();
+
+    // 分类列表
+    let dData = {
+      Action: 'GetClassList',
+      DepClassID: 2
+    }
+    let list = this.data.list
+    wc.get(dData, (json) => {
+      if (json[isSuccess] === success) {
+        json.List.unshift({
+          ClassID: 0,
+          ClassName: '全部分类',
+          checked: 'true'
+        })
+        that.setData({
+          'list[0].placeSortData': json.List
+        })
+      }
+    })
+
   },
 
 
