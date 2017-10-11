@@ -5,11 +5,15 @@
   <template is="Banner" data="{{imgUrls}}"></template>
 </view>
 
-<view class='search_top'>
+<!-- <view class='search_top'>
   <navigator url="" class="searchs">
     <icon type="search" size="14" class="serIcon"></icon>
     <text>课程收索</text>
   </navigator>
+</view> -->
+
+<view class='search_top'>
+  <input class='searchs' placeholder='课程搜索' bindinput='searchList'></input>
 </view>
 
 <view class='sort'>

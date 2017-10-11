@@ -4,12 +4,17 @@
   <template is="Banner" data="{{imgUrls}}"></template>
 </view>
 <view>
-  <view class='search_top'>
+  <!-- <view class='search_top'>
     <navigator url="" class="searchs">
       <icon type="search" size="14" class="serIcon"></icon>
       <text>搜索采购</text>
     </navigator>
+  </view> -->
+
+  <view class='search_top'>
+    <input class='searchs' placeholder='课程搜索' bindinput='searchList'></input>
   </view>
+  
   <view class='sort'>
     <template is="Filtrate" data="{{list}}"></template>
   </view>

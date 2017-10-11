@@ -45,17 +45,26 @@ Page({
 
   },
 
+  // 搜索列表
+  searchList: function (e) {
+    const that = this
+    let content = e.detail.value
+
+    this.getList({ KeyWords: content })
+  },
+
   // 获取列表
-  getList: function({}) {
+  getList: function ({ Action = 'GetNewsList', KeyWords = '', ClassID = 0, SortType = 0, TimeType = 0, pageSize = 10, pageIndex = 1 } = {}) {
+    const that = this
     // list
     let getData = {
-      Action: 'GetNewsList',
-      KeyWords: '',
-      ClassID: 0,
-      SortType: 0,
-      TimeType: 0,
-      pageSize: 10,
-      pageIndex: 1
+      Action,
+      KeyWords,
+      ClassID,
+      SortType,
+      TimeType,
+      pageSize,
+      pageIndex
     }
 
     wc.get(getData, (json) => {
@@ -87,28 +96,11 @@ Page({
     })
 
     // list
-    let getData = {
-      Action: 'GetNewsList',
-      KeyWords: '',
-      ClassID: 0,
-      SortType: 0,
-      TimeType: 0,
-      pageSize: 10,
-      pageIndex: 1
-    }
-
-    wc.get(getData, (json) => {
-      if (json[isSuccess] === success) {
-        console.log(json[data])
-        that.setData({
-          readList: json[data]
-        })
-      }
-    })
+    this.getList()
 
     //引入条件筛选
     var filtration = new Filtration(this);
-    filtration.bindEvents();  
+    filtration.bindEvents();
   },
 
   /**
