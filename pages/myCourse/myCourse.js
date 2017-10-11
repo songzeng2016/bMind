@@ -1,25 +1,34 @@
-// pages/mineList/mineList.js
+// pages/myCourse/myCourse.js
+const app = getApp()
+const { wc } = app
+const { host, data, isSuccess, success } = wc
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    readList: [
-      {
-        NewsID: 13,
-        NewsPic: "https://sp.yangchengtech.com/upload/20170926/201709260726591777.png",
-        NewsTitle: "Be a urban gardener 当个园艺人23",
-        Price: 0
-      }
-    ]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const that = this
+    let getData = {
+      Action: 'GetMyCourseList',
+      UserID: 1
+    }
 
+    wc.get(getData, (json) => {
+      if (json[isSuccess] === success) {
+        that.setData({
+          Data: json[data]
+        })
+      }
+    })
   },
 
   /**

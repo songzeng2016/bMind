@@ -1,25 +1,7 @@
-// pages/mine/mine.js
+// pages/myRead/myRead.js
 const app = getApp()
 const { wc } = app
 const { host, data, isSuccess, success } = wc
-
-let list = [
-  {
-    icon: 'image',
-    title: '我的文章',
-    path: 'myRead'
-  },
-  {
-    icon: 'image',
-    title: '我的课程',
-    path: 'myCourse'
-  },
-  {
-    icon: 'image',
-    title: '我的物品',
-    path: 'myGoods'
-  }
-]
 
 Page({
 
@@ -27,20 +9,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list,
-  },
 
-  navtoList: function (e) {
-    let data = e.currentTarget.dataset
-    let path = data.path
-    wc.navigateTo('/pages/' + path + '/' + path)
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const that = this
+    let getData = {
+      Action: 'GetMyNewsList',
+      UserID: 1
+    }
 
+    wc.get(getData, (json) => {
+      if (json[isSuccess] === success) {
+        that.setData({
+          readList: json[data]
+        })
+      }
+    })
   },
 
   /**

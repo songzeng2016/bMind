@@ -32,6 +32,11 @@
   border-bottom: 1px dotted #c6c6c6;
 }
 
+.button_contact{
+  background: white;
+  border: none;
+}
+
 .list .icon {
   width: 32rpx;
   height: 42rpx;

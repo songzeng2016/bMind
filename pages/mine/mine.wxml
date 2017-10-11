@@ -5,7 +5,15 @@
 </view>
 
 <view class='list-wrapper'>
-  <view class='list flex' wx:for='{{list}}' wx:key='*list' bindtap='navtoList'>
+  <button class='list flex button_contact' open-type='contact'>
+    <view>
+      <image class='icon' src='/image/mine1.png'></image>
+      <text class='text'>在线客服</text>
+    </view>
+    <image class='arowR' src='/image/arowR.png'></image>
+  </button>
+
+  <view class='list flex' wx:for='{{list}}' wx:key='*list' bindtap='navtoList' data-path="{{item.path}}">
     <view>
       <image class='icon' src='/image/mine{{index + 1}}.png'></image>
       <text class='text'>{{item.title}}</text>
