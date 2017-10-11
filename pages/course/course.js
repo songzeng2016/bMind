@@ -26,30 +26,30 @@ Page({
         ],
       },
       {
-        placeSortSelect: "产地",
+        placeSortSelect: "形式",
         placePurSortOpen: true,
         placeSortData: [
-          { id: 100, name: '产地', checked: 'true' },
-          { id: 101, name: '北京' },
-          { id: 102, name: '天津' },
-          { id: 103, name: '上海' }
+          { ClassID: 0, ClassName: '形式', checked: 'true' },
+          { ClassID: 101, ClassName: '北京' },
+          { ClassID: 102, ClassName: '天津' },
+          { ClassID: 103, ClassName: '上海' }
         ],
       },
       {
         placeSortSelect: "最热",
         placePurSortOpen: true,
         placeSortData: [
-          { id: 100, name: '最热', checked: 'true' },
-          { id: 101, name: '最新' }
+          { ClassID: 0, ClassName: '最热', checked: 'true' },
+          { ClassID: 0, ClassName: '最新' }
         ],
       },
       {
         placeSortSelect: "全部时间",
         placePurSortOpen: true,
         placeSortData: [
-          { id: 100, name: '全部时间', checked: 'true' },
-          { id: 101, name: '一周内' },
-          { id: 102, name: '一月内' }
+          { ClassID: 0, ClassName: '全部时间', checked: 'true' },
+          { ClassID: 0, ClassName: '一周内' },
+          { ClassID: 0, ClassName: '一月内' }
         ],
       }
     ],
@@ -110,6 +110,9 @@ Page({
 
     //引入条件筛选
     var filtration = new Filtration(this);
+    filtration.bindEvents();
+    //引入条件筛选
+    var filtration = new Filtration(this, 1);
     filtration.bindEvents();
 
     // 分类列表

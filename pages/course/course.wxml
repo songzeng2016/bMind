@@ -12,11 +12,14 @@
   </view> -->
 
   <view class='search_top'>
+    <!-- <view>
+      <template is="Filtrate1" data="{{list1}}" />
+    </view> -->
     <input class='searchs' placeholder='课程搜索' bindinput='searchList'></input>
   </view>
 
   <view class='sort'>
-    <template is="Filtrate" data="{{list}}"></template>
+    <template is="Filtrate" data="{{list}}" />
   </view>
 
 

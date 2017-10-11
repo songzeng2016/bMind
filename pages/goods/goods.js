@@ -115,6 +115,24 @@ Page({
       }
     })
 
+    // 分类列表
+    let aData = {
+      Action: 'GetAreaList'
+    }
+    // let list = this.data.list
+    wc.get(aData, (json) => {
+      if (json[isSuccess] === success) {
+        json.List.unshift({
+          ClassID: 0,
+          ClassName: '产地',
+          checked: 'true'
+        })
+        that.setData({
+          'list[1].placeSortData': json.List
+        })
+      }
+    })
+
   },
 
 
@@ -122,10 +140,25 @@ Page({
   collectCut: function (e) {
     // console.log(e)
     var index = e.currentTarget.dataset.index;
-    var list = this.data.list
+    var list = this.data.goodList
     // console.log(list)
-    list[index].praise = !(list[index].praise || false);
-    this.setData({ list })
+    list[index].collect = !(list[index].collect || false);
+    this.setData({ goodList: list })
+
+    // 切换收藏状态
+    let id = e.currentTarget.dataset.id
+    let getData = {
+      Action: 'AddFavorite',
+      ClassID: 3,
+      UserID: 1,
+      ID: id
+    }
+    // let list = this.data.list
+    wc.get(getData, (json) => {
+      if (json[isSuccess] === success) {
+        
+      }
+    })
   },
 
   /**
