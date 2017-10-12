@@ -34,6 +34,7 @@
 
 .button_contact {
   background: white;
+  border-radius: 0rpx;
   border-bottom: 1px dotted #c6c6c6;
 }
 
