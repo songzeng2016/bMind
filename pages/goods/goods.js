@@ -48,13 +48,14 @@ Page({
   },
 
   // 获取列表
-  getList: function ({ Action = 'GetProductList', KeyWords = '', ClassID = 0, SortType = 0, TimeType = 0, pageSize = 10, pageIndex = 1 } = {}) {
+  getList: function ({ Action = 'GetProductList', KeyWords = '', ClassID = 0, SortID = 0, SortType = 0, TimeType = 0, pageSize = 10, pageIndex = 1 } = {}) {
     const that = this
     // list
     let getData = {
       Action,
       KeyWords,
       ClassID,
+      AreaID: SortID,
       SortType,
       TimeType,
       pageSize,
@@ -116,7 +117,7 @@ Page({
       }
     })
 
-    // 分类列表
+    // 城市列表
     let aData = {
       Action: 'GetAreaList'
     }
@@ -125,6 +126,7 @@ Page({
       if (json[isSuccess] === success) {
         json.List.unshift({
           ClassID: 0,
+          SortID: 0,
           ClassName: '产地',
           checked: 'true'
         })

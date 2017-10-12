@@ -25,6 +25,8 @@ Page({
 
     wc.get(getData, (json) => {
       if (json[isSuccess] === success) {
+        json[data].authName = json[data].NewsBrief.split('，')[0]
+        json[data].authDesc = json[data].NewsBrief.split('，')[1]
         that.setData({
           info: json[data]
         })

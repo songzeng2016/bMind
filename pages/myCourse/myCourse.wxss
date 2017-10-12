@@ -13,7 +13,7 @@
 .serSortList{z-index: 9999;position: absolute;text-align: center;width: 100%; background: #fff;}
 .display_inb{display: inline-block;}
 .list_bottom{font-size: 24rpx;color: #666;position: relative;bottom: 0;}
-.list_eye{width: 36rpx;height: 24rpx;}
+.list_eye{width: 36rpx;height: 24rpx;margin-right:10rpx;}
 .list_day{display: inline-block;float: right;}
 .fl{float: left;}
 .fr{float: right;}

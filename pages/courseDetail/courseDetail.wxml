@@ -44,7 +44,8 @@
   </view>
   <view class='list'>
     <view class='title'>老师介绍</view>
-    <text class='desc'>{{info.TeacherDesc}}</text>
+    <!-- <text class='desc'>{{info.TeacherDesc}}</text> -->
+    <rich-text class='desc' type='text' nodes="{{info.TeacherDesc}}"></rich-text>
   </view>
   <view class='list'>
     <view class='title'>主办方介绍</view>

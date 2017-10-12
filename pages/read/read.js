@@ -28,17 +28,17 @@ Page({
         placeSortSelect: "最热",
         placePurSortOpen: true,
         placeSortData: [
-          { ClassID: 0, ClassName: '最热', checked: 'true' },
-          { ClassID: 0, ClassName: '最新' }
+          { ClassID: 0, SortType: 0, ClassName: '最热', checked: 'true' },
+          { ClassID: 0, SortType: 1, ClassName: '最新' }
         ],
       },
       {
         placeSortSelect: "全部时间",
         placePurSortOpen: true,
         placeSortData: [
-          { ClassID: 0, ClassName: '全部时间', checked: 'true' },
-          { ClassID: 0, ClassName: '一周内' },
-          { ClassID: 0, ClassName: '一月内' }
+          { ClassID: 0, TimeType: 0, ClassName: '全部时间', checked: 'true' },
+          { ClassID: 0, TimeType: 1, ClassName: '一周内' },
+          { ClassID: 0, TimeType: 2, ClassName: '一月内' }
         ],
       }
     ],
@@ -121,7 +121,7 @@ Page({
         })
       }
     })
-    
+
   },
 
   /**

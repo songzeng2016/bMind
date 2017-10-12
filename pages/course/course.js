@@ -29,27 +29,28 @@ Page({
         placeSortSelect: "形式",
         placePurSortOpen: true,
         placeSortData: [
-          { ClassID: 0, ClassName: '形式', checked: 'true' },
-          { ClassID: 101, ClassName: '北京' },
-          { ClassID: 102, ClassName: '天津' },
-          { ClassID: 103, ClassName: '上海' }
+          { ClassID: 0, CourseType: 0, ClassName: '形式', checked: 'true' },
+          { ClassID: 0, CourseType: 1, ClassName: '微课' },
+          { ClassID: 0, CourseType: 2, ClassName: '工作坊' },
+          { ClassID: 0, CourseType: 3, ClassName: '讲课' },
+          { ClassID: 0, CourseType: 4, ClassName: '旅程' }
         ],
       },
       {
         placeSortSelect: "最热",
         placePurSortOpen: true,
         placeSortData: [
-          { ClassID: 0, ClassName: '最热', checked: 'true' },
-          { ClassID: 0, ClassName: '最新' }
+          { ClassID: 0, SortType: 0, ClassName: '最热', checked: 'true' },
+          { ClassID: 0, SortType: 1, ClassName: '最新' }
         ],
       },
       {
         placeSortSelect: "全部时间",
         placePurSortOpen: true,
         placeSortData: [
-          { ClassID: 0, ClassName: '全部时间', checked: 'true' },
-          { ClassID: 0, ClassName: '一周内' },
-          { ClassID: 0, ClassName: '一月内' }
+          { ClassID: 0, TimeType: 0, ClassName: '全部时间', checked: 'true' },
+          { ClassID: 0, TimeType: 1, ClassName: '一周内' },
+          { ClassID: 0, TimeType: 2, ClassName: '一月内' }
         ],
       }
     ],
@@ -64,7 +65,7 @@ Page({
   },
 
   // 获取列表
-  getList: function ({ Action = 'GetCourseList', KeyWords = '', ClassID = 0, SortType = 0, TimeType = 0, pageSize = 10, pageIndex = 1 } = {}) {
+  getList: function ({ Action = 'GetCourseList', KeyWords = '', ClassID = 0, SortType = 0, TimeType = 0, AreaID = '', CourseType = 0, pageSize = 10, pageIndex = 1 } = {}) {
     const that = this
     // list
     let getData = {
@@ -73,6 +74,8 @@ Page({
       ClassID,
       SortType,
       TimeType,
+      AreaID,
+      CourseType,
       pageSize,
       pageIndex,
       UserID: wx.getStorageSync('openId'),
