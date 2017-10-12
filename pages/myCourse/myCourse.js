@@ -19,7 +19,7 @@ Page({
     const that = this
     let getData = {
       Action: 'GetMyCourseList',
-      UserID: 1
+      UserID: wx.getStorageSync('openId'),
     }
 
     wc.get(getData, (json) => {

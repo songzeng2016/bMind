@@ -1,5 +1,7 @@
 <import src="../../module/banner/banner.wxml" />
 <import src="../../module/filtrate/filtrate.wxml" />
+<import src="../myGoods/myGoods.wxml" />
+
 <view class="top">
   <template is="Banner" data="{{imgUrls}}"></template>
 </view>
@@ -14,12 +16,14 @@
   <view class='search_top'>
     <input class='searchs' placeholder='课程搜索' bindinput='searchList'></input>
   </view>
-  
+
   <view class='sort'>
     <template is="Filtrate" data="{{list}}"></template>
   </view>
 
-  <view class='content' wx:for='{{goodList}}' wx:key='*goodList'>
+  <template is="myGoods" data="{{goodList}}" />
+
+  <!-- <view class='content' wx:for='{{goodList}}' wx:key='*goodList'>
 
     <navigator url='../goodsDetail/goodsDetail?id={{item.ProductID}}'>
       <view class='lists display_inb'>
@@ -37,7 +41,7 @@
       </view>
     </navigator>
 
-  </view>
+  </view> -->
 
   <!-- <view class='content'>
       <view class='lists display_inb'>

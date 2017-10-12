@@ -20,39 +20,40 @@ App({
         }
 
         that.wc.get(data, (json) => {
-          wx.setStorageSync('openId', json.result)
+          wx.setStorageSync('openId', json.result || 1)
           // that.openId = json.result
+
+          // 获取用户信息
+          wx.getUserInfo({
+            success: res => {
+              // 可以将 res 发送给后台解码出 unionId
+              this.globalData.userInfo = res.userInfo
+
+              let userInfo = res.userInfo
+              let getData = {
+                Action: 'CheckUser',
+                openid: wx.getStorageSync('openId'),
+                nickName: userInfo.nickName,
+                avatarUrl: userInfo.avatarUrl,
+                gender: userInfo.gender, //性别 0：未知、1：男、2：女
+                province: userInfo.province,
+                city: userInfo.city,
+                country: userInfo.country
+              }
+
+              that.wc.get(getData, (json) => {
+
+              })
+
+              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+              // 所以此处加入 callback 以防止这种情况
+              if (this.userInfoReadyCallback) {
+                this.userInfoReadyCallback(res)
+              }
+            }
+          })
+
         })
-      }
-    })
-
-    // 获取用户信息
-    wx.getUserInfo({
-      success: res => {
-        // 可以将 res 发送给后台解码出 unionId
-        this.globalData.userInfo = res.userInfo
-
-        let userInfo = res.userInfo
-        let getData = {
-          Action: 'CheckUser',
-          openid: wx.getStorageSync('openId'),
-          nickName: userInfo.nickName,
-          avatarUrl: userInfo.avatarUrl,
-          gender: userInfo.gender, //性别 0：未知、1：男、2：女
-          province: userInfo.province,
-          city: userInfo.city,
-          country: userInfo.country
-        }
-
-        that.wc.get(getData, (json) => {
-
-        })
-
-        // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-        // 所以此处加入 callback 以防止这种情况
-        if (this.userInfoReadyCallback) {
-          this.userInfoReadyCallback(res)
-        }
       }
     })
 

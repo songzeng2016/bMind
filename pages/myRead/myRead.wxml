@@ -7,8 +7,8 @@
         <view class='list_con'>{{item.NewsTitle}}</view>
         <view class='list_bottom'>
           <image src='/image/eye.png' class='list_eye'></image>
-          <text>{{item.Price}}</text>
-          <view class='list_day'>15天前</view>
+          <text>{{item.NewsHits}}</text>
+          <view class='list_day'>{{item.strPostDate}}</view>
         </view>
       </view>
     </navigator>

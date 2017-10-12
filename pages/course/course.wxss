@@ -2,7 +2,9 @@
 .search_top{height: 90rpx;background: #ebe6e4;position: relative;}
 .searchs{height: 50rpx;width: 690rpx;background: #fff;border-radius: 5rpx;position: absolute;top: 20rpx;left: 30rpx;text-align: center;font-size: 26rpx;color: #333333;line-height: 50rpx;}
 
-.content{padding: 0 30rpx 0 30rpx;}
+@import '../myCourse/myCourse.wxss'
+
+/* .content{padding: 0 30rpx 0 30rpx;}
 .lists{border-bottom:1rpx dashed #ebe6e4;height: 260rpx; padding-top: 25rpx;}
 .list_img{width: 220rpx; height: 220rpx; }
 .list_head_color{color: #c8b9a6;}
@@ -19,5 +21,5 @@
 .list_eye{width: 36rpx;height: 24rpx;}
 .list_day{display: inline-block;float: right;}
 .fl{float: left;}
-.fr{float: right;}
+.fr{float: right;} */
 

@@ -1,5 +1,7 @@
 <import src="../../module/banner/banner.wxml" />
 <import src="../../module/filtrate/filtrate.wxml" />
+<import src="../myCourse/myCourse.wxml" />
+
 <view class="top">
   <template is="Banner" data="{{imgUrls}}"></template>
 </view>
@@ -22,8 +24,9 @@
     <template is="Filtrate" data="{{list}}" />
   </view>
 
+  <template is="myCourse" data="{{Data}}" />
 
-  <view class='content' wx:for='{{Data}}' wx:key='*Data'>
+  <!-- <view class='content' wx:for='{{Data}}' wx:key='*Data'>
 
     <navigator url='../courseDetail/courseDetail?id={{item.CourseID}}'>
       <view class='lists display_inb'>
@@ -44,6 +47,6 @@
       </view>
     </navigator>
 
-  </view>
+  </view> -->
 
 </view>

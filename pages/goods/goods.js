@@ -58,7 +58,8 @@ Page({
       SortType,
       TimeType,
       pageSize,
-      pageIndex
+      pageIndex,
+      UserID: wx.getStorageSync('openId'),
     }
 
     wc.get(getData, (json) => {
