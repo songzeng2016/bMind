@@ -48,14 +48,14 @@ Page({
   },
 
   // 获取列表
-  getList: function ({ Action = 'GetProductList', KeyWords = '', ClassID = 0, SortType = 0, TimeType = 0, pageSize = 10, pageIndex = 1 } = {}) {
+  getList: function ({ Action = 'GetProductList', KeyWords = '', ClassID = 0, AreaID = 0, SortType = 0, TimeType = 0, pageSize = 10, pageIndex = 1 } = {}) {
     const that = this
     // list
     let getData = {
       Action,
       KeyWords,
       ClassID,
-      AreaID: ClassID,
+      AreaID,
       SortType,
       TimeType,
       pageSize,

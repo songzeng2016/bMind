@@ -102,9 +102,9 @@ Page({
     var curItem = e.currentTarget.dataset.item;
     console.log(curItem);
     page.getList(curItem)
-    // page.setData({
-    //   supSortSelectId1: curItem.ClassID
-    // });
+    page.setData({
+      supSortSelectId1: curItem.ClassID
+    });
   },
 
   // 收藏状态切换
@@ -140,7 +140,7 @@ Page({
   },
 
   // 获取列表
-  getList: function ({ Action = 'GetCourseList', KeyWords = '', ClassID = 0, SortType = 0, TimeType = 0, CourseType = 0, pageSize = 10, pageIndex = 1 } = {}) {
+  getList: function ({ Action = 'GetCourseList', KeyWords = '', ClassID = 0, AreaID = 0, SortType = 0, TimeType = 0, CourseType = 0, pageSize = 10, pageIndex = 1 } = {}) {
     const that = this
     // list
     let getData = {
@@ -149,7 +149,7 @@ Page({
       ClassID,
       SortType,
       TimeType,
-      AreaID: ClassID,
+      AreaID,
       CourseType,
       pageSize,
       pageIndex,
@@ -221,8 +221,8 @@ Page({
     wc.get(aData, (json) => {
       if (json[isSuccess] === success) {
         json.List.unshift({
+          AreaID: 0,
           ClassID: 0,
-          SortID: 0,
           ClassName: '城市',
           checked: 'true'
         })

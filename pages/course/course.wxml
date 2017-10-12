@@ -25,7 +25,7 @@
                 <label data-item="{{item}}" bindtap="supSortChangeItemFn1">
                   <view class='serSort_border '>
                     <radio value="{{item.ClassName}}" checked="{{item.checked}}" hidden="true" />{{item.ClassName}}
-                    <block wx:if="{{item.ClassID != supSortSelectId1}}">
+                    <block>
                       <icon hidden="{{!item.checked}}" class="serSortListItR_ok" color='#ebe6e4' type="success_no_circle" size="14" />
                     </block>
                   </view>

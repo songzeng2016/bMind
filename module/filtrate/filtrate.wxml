@@ -6,10 +6,10 @@
       <view class="serSortList" hidden="{{ item.placePurSortOpen }}">
         <radio-group bindchange="placeSortChangeFn" data-index="{{index}}">
           <block wx:for="{{item.placeSortData}}" wx:key="id" wx:for-item="item">
-            <label data-item="{{item}}" class=" {{item.ClassID == supSortSelectId? 'serSortListItemAct':''}}" bindtap="supSortChangeItemFn">
+            <label data-item="{{item}}"  bindtap="supSortChangeItemFn">
               <view class='serSort_border '>
                 <radio value="{{item.ClassName}}" checked="{{item.checked}}" hidden="true" />{{item.ClassName}}
-                <block wx:if="{{item.ClassID != supSortSelectId}}">
+                <block>
                   <icon hidden="{{!item.checked}}" class="serSortListItR_ok" color='#ebe6e4' type="success_no_circle" size="14" />
                 </block>
               </view>
