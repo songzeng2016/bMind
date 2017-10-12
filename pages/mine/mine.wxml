@@ -1,7 +1,7 @@
 <!--pages/mine/mine.wxml-->
 <view class='top flex'>
-  <image class='avatar' src='/image/1.jpg'></image>
-  <text class='name'>songzeng</text>
+  <image class='avatar' src='{{userInfo.avatarUrl}}'></image>
+  <text class='name'>{{userInfo.nickName}}</text>
 </view>
 
 <view class='list-wrapper'>
@@ -15,7 +15,7 @@
 
   <view class='list flex' wx:for='{{list}}' wx:key='*list' bindtap='navtoList' data-path="{{item.path}}">
     <view>
-      <image class='icon' src='/image/mine{{index + 1}}.png'></image>
+      <image class='icon' src='/image/mine{{index + 2}}.png'></image>
       <text class='text'>{{item.title}}</text>
     </view>
     <image class='arowR' src='/image/arowR.png'></image>

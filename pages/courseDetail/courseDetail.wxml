@@ -1,6 +1,7 @@
 <!--pages/detail/detail.wxml-->
 <view class='banner'>
   <image src='{{info.CoursePic}}'></image>
+  <view class='type'>| {{info.CourseTypeName}} |</view>
   <view class='title'>{{info.CourseTitle}}</view>
   <view class='desc'>{{info.CourseDesc}}</view>
   <view class='sale'>预售中</view>
@@ -9,32 +10,49 @@
 <view class='price-num flex'>
   <view class='price-wrapper'>
     <text>￥</text>
-    <text class='price'>5000</text>
+    <text class='price'>{{info.Price}}</text>
     <text> 起</text>
   </view>
-  <text>已有2000人报名</text>
+  <text>已有{{info.AppalyCount}}人报名</text>
 </view>
 
 <view class='time-place'>
   <view class='time'>
     <view>
       <image class='icon' src='/image/time.png'></image>
-      <text class='text'>2017.11.01 - 2017.11.03</text>
+      <text class='text'>{{info.CourseTime}}</text>
     </view>
   </view>
   <view class='place'>
     <view>
       <image class='icon' src='/image/place.png'></image>
-      <text class='text'>上海体育场</text>
+      <text class='text'>{{info.CourseAddress}}</text>
     </view>
     <image class='icon_arow' src='/image/arowR.png'></image>
   </view>
 </view>
 
 <view class='list-wrapper'>
-  <view class='list' wx:for='{{list}}' wx:key='*this'>
+  <!-- <view class='list' wx:for='{{list}}' wx:key='*this'>
     <view class='title'>{{item.title}}</view>
     <text class='desc'>{{item.desc}}</text>
+  </view> -->
+
+  <view class='list'>
+    <view class='title'>课程介绍</view>
+    <text class='desc'>{{info.CourseDesc}}</text>
+  </view>
+  <view class='list'>
+    <view class='title'>老师介绍</view>
+    <text class='desc'>{{info.TeacherDesc}}</text>
+  </view>
+  <view class='list'>
+    <view class='title'>主办方介绍</view>
+    <text class='desc'>{{info.SponsorDesc}}</text>
+  </view>
+  <view class='list'>
+    <view class='title'>翻译介绍</view>
+    <text class='desc'>{{info.TranslaterDesc}}</text>
   </view>
 
   <button class='button'>我要咨询</button>

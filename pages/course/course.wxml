@@ -30,9 +30,11 @@
         <image class='list_img fl' src='{{item.CoursePic}}'></image>
         <view class='list_content fr'>
           <view class=' list_head'>
-            <text class='list_head_color'>|{{item.CourseTitle}}|</text> {{item.CourseDesc}}</view>
+            <text class='list_head_color'>| {{item.CourseTypeName}} | </text>
+            <text>  {{item.CourseTitle}}</text>
+          </view>
           <view class='list_time list_head_color'>{{item.CourseTime}}</view>
-          <view class='list_details display_inb'>{{item.ProductDesc}}</view>
+          <view class='list_details display_inb'>{{item.CourseAddress}}</view>
           <view class='list_bottom'>
             <image src='/image/eye.png' class='list_eye'></image>
             <text>{{item.CourseHits}}</text>

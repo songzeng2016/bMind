@@ -19,13 +19,19 @@ page {
   height: 100%;
 }
 
-.banner .title, .banner .desc {
+.banner .title, .banner .desc, .banner .type {
   position: absolute;
   left: 400rpx;
   top: 94rpx;
   font-size: 32rpx;
   color: white;
   font-weight: normal;
+}
+
+.banner .type {
+  top: 56rpx;
+  font-size: 26rpx;
+  color: #c0bab2;
 }
 
 .banner .desc {
