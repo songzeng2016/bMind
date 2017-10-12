@@ -1,7 +1,7 @@
 // pages/goodsDetail/goodsDetail.js
 const app = getApp()
 const { wc } = app
-const { host, data, isSuccess, success } = wc
+const { imgUrl, host, data, isSuccess, success } = wc
 
 Page({
 
@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    imgUrl,
   },
 
   /**

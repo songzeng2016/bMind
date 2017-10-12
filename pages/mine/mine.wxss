@@ -32,8 +32,12 @@
   border-bottom: 1px dotted #c6c6c6;
 }
 
-.button_contact{
+.button_contact {
   background: white;
+  border-bottom: 1px dotted #c6c6c6;
+}
+
+.button_contact::after {
   border: none;
 }
 

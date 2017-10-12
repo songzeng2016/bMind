@@ -1,6 +1,6 @@
 <view class="top">
-  <image class="top_img" src="{{info.ProductPic}}"></image>
-  <view class='top_msg'>预售中</view>
+  <image class="top_img" src="{{imgUrl}}{{info.ProductDetailPic}}"></image>
+  <!-- <view class='top_msg'>预售中</view> -->
 </view>
 <view class='head'>
   <view class='head_name fl'>{{info.ProductTitle}}</view>
@@ -27,5 +27,5 @@
         <image src='../../image/2.jpg' class='content_img'></image>
       </view>
     </view> -->
-    <button>我要咨询</button>
+    <button open-type='contact'>我要咨询</button>
   </view>

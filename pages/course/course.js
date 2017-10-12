@@ -54,6 +54,57 @@ Page({
         ],
       }
     ],
+    list1: [
+      {
+        placeSortSelect: "城市",
+        placePurSortOpen: true,
+        placeSortData: [
+          { ClassID: 0, TimeType: 0, ClassName: '全部时间', checked: 'true' },
+          { ClassID: 0, TimeType: 1, ClassName: '一周内' },
+          { ClassID: 0, TimeType: 2, ClassName: '一月内' }
+        ],
+      },
+    ]
+  },
+
+  placeUnfold1: function (e) {
+    // console.log(e)
+    let page = this
+    var index = e.currentTarget.dataset.index;
+    var status = page.data.list1[index].placePurSortOpen
+    var list1 = page.data.list1
+    for (var i = 0; i < list1.length; i++) {
+      list1[i].placePurSortOpen = true;
+    }
+    list1[index].placePurSortOpen = !status
+    page.setData({ list1 });
+  },
+  // change value
+  placeSortChangeFn1: function (e) {
+    let page = this
+    let val = e.detail.value;
+    var list1 = page.data.list1
+    var index = e.currentTarget.dataset.index;
+    console.log(e)
+    list1[index].placeSortSelect = val
+    for (let i in list1[index].placeSortData) {
+      list1[index].placeSortData[i].checked = false
+      if (list1[index].placeSortData[i].ClassName == val) {
+        list1[index].placeSortData[i].checked = true
+      }
+    }
+    page.setData({ list1 });
+    //console.log('radio发生change事件，携带value值为：', e.detail.value)
+  },
+  supSortChangeItemFn1: function (e) {
+    let page = this
+    //必须 用currentTarget 
+    var curItem = e.currentTarget.dataset.item;
+    console.log(curItem);
+    page.getList(curItem)
+    // page.setData({
+    //   supSortSelectId1: curItem.ClassID
+    // });
   },
 
   // 收藏状态切换
@@ -89,7 +140,7 @@ Page({
   },
 
   // 获取列表
-  getList: function ({ Action = 'GetCourseList', KeyWords = '', ClassID = 0, SortType = 0, TimeType = 0, AreaID = '', CourseType = 0, pageSize = 10, pageIndex = 1 } = {}) {
+  getList: function ({ Action = 'GetCourseList', KeyWords = '', ClassID = 0, SortType = 0, TimeType = 0, CourseType = 0, pageSize = 10, pageIndex = 1 } = {}) {
     const that = this
     // list
     let getData = {
@@ -98,7 +149,7 @@ Page({
       ClassID,
       SortType,
       TimeType,
-      AreaID,
+      AreaID: ClassID,
       CourseType,
       pageSize,
       pageIndex,
@@ -158,6 +209,25 @@ Page({
         })
         that.setData({
           'list[0].placeSortData': json.List
+        })
+      }
+    })
+
+    // 城市列表
+    let aData = {
+      Action: 'GetAreaList'
+    }
+    // let list = this.data.list
+    wc.get(aData, (json) => {
+      if (json[isSuccess] === success) {
+        json.List.unshift({
+          ClassID: 0,
+          SortID: 0,
+          ClassName: '城市',
+          checked: 'true'
+        })
+        that.setData({
+          'list1[0].placeSortData': json.List
         })
       }
     })

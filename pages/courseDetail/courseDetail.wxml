@@ -56,5 +56,5 @@
     <text class='desc'>{{info.TranslaterDesc}}</text>
   </view>
 
-  <button class='button'>我要咨询</button>
+  <button class='button' open-type='contact'>我要咨询</button>
 </view>

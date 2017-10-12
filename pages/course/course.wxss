@@ -1,6 +1,17 @@
 .top{width: 100%;height: 320rpx;}
 .search_top{height: 90rpx;background: #ebe6e4;position: relative;}
-.searchs{height: 50rpx;width: 690rpx;background: #fff;border-radius: 5rpx;position: absolute;top: 20rpx;left: 30rpx;text-align: center;font-size: 26rpx;color: #333333;line-height: 50rpx;}
+.searchs{height: 50rpx;width: 500rpx;background: #fff;border-radius: 5rpx;position: absolute;top: 20rpx;right: 30rpx;text-align: center;font-size: 26rpx;color: #333333;line-height: 50rpx;}
+
+.areaList{
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  width: 180rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: white;
+  border-radius: 5rpx;
+}
 
 @import '../myCourse/myCourse.wxss'
 

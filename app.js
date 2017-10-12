@@ -42,7 +42,7 @@ App({
               }
 
               that.wc.get(getData, (json) => {
-
+                wx.setStorageSync('openId', json.Message || 1)
               })
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
