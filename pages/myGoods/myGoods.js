@@ -12,6 +12,30 @@ Page({
   
   },
 
+  // 收藏状态切换
+  collectCut: function (e) {
+    var index = e.currentTarget.dataset.index;
+    var list = this.data.goodList
+
+    list[index].IsFav = !(list[index].IsFav || false);
+    this.setData({ goodList: list })
+
+    // 切换收藏状态
+    let id = e.currentTarget.dataset.id
+    let getData = {
+      Action: 'AddFavorite',
+      ClassID: 3,
+      UserID: wx.getStorageSync('openId'),
+      ID: id
+    }
+    // let list = this.data.list
+    wc.get(getData, (json) => {
+      if (json[isSuccess] === success) {
+
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

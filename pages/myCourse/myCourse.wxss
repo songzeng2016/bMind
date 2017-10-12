@@ -7,7 +7,7 @@
 .list_head{ font-size: 26rpx;color: #000000;height: 66rpx;overflow: hidden;}
 .list_time{font-size: 24rpx;height: 30rpx;}
 .list_details{color: #a19a8a;padding-top:20rpx; height:80rpx; overflow: hidden;}
-.list_collect{width: 26rpx;height: 26rpx;vertical-align: middle;margin-top: 10rpx;}
+.list_collect{width: 26rpx;height: 26rpx;vertical-align: middle;margin-left: 10rpx;margin-top: -6rpx;}
 .list_price{height: 45rpx;}
 .price{vertical-align: middle;}
 .serSortList{z-index: 9999;position: absolute;text-align: center;width: 100%; background: #fff;}

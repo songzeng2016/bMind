@@ -8,6 +8,9 @@
         <view class='list_bottom'>
           <image src='/image/eye.png' class='list_eye'></image>
           <text>{{item.NewsHits}}</text>
+          <view class='display_inb list_cv' catchtap="collectCut" data-index="{{index}}" data-id="{{item.NewsID}}">
+              <image src="{{item.IsFav ? '/image/collecting.png':'/image/collect.png'}}" class='list_collect'></image>
+            </view>
           <view class='list_day'>{{item.strPostDate}}</view>
         </view>
       </view>

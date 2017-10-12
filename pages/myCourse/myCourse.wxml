@@ -15,12 +15,15 @@
           <view class='list_bottom'>
             <image src='/image/eye.png' class='list_eye'></image>
             <text>{{item.CourseHits}}</text>
+            <view class='display_inb list_cv' catchtap="collectCut" data-index="{{index}}" data-id="{{item.CourseID}}">
+              <image src="{{item.IsFav ? '/image/collecting.png':'/image/collect.png'}}" class='list_collect'></image>
+            </view>
             <view class='list_day'>￥{{item.Price}}起</view>
           </view>
         </view>
       </view>
     </navigator>
-    
+
   </view>
 </template>
 

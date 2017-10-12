@@ -4,4 +4,6 @@
 .list_con{font-size: 26rpx;color: #333;}
 .list_bottom{font-size: 24rpx;color: #666;padding-top: 18rpx;}
 .list_eye{width: 36rpx;height: 24rpx; margin-right: 10rpx;}
+.list_cv{display: inline-block;}
+.list_collect{width: 26rpx;height: 26rpx;vertical-align: middle;margin-left: 10rpx;margin-top: -6rpx;}
 .list_day{display: inline-block;float: right;}

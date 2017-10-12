@@ -45,6 +45,30 @@ Page({
 
   },
 
+  // 收藏状态切换
+  collectCut: function (e) {
+    var index = e.currentTarget.dataset.index;
+    var list = this.data.readList
+
+    list[index].IsFav = !(list[index].IsFav || false);
+    this.setData({ readList: list })
+
+    // 切换收藏状态
+    let id = e.currentTarget.dataset.id
+    let getData = {
+      Action: 'AddFavorite',
+      ClassID: 1,
+      UserID: wx.getStorageSync('openId'),
+      ID: id
+    }
+    // let list = this.data.list
+    wc.get(getData, (json) => {
+      if (json[isSuccess] === success) {
+
+      }
+    })
+  },
+
   // 搜索列表
   searchList: function (e) {
     const that = this

@@ -139,13 +139,12 @@ Page({
   },
 
 
-  //收藏切换
+  // 收藏状态切换
   collectCut: function (e) {
-    // console.log(e)
     var index = e.currentTarget.dataset.index;
     var list = this.data.goodList
-    // console.log(list)
-    list[index].collect = !(list[index].collect || false);
+
+    list[index].IsFav = !(list[index].IsFav || false);
     this.setData({ goodList: list })
 
     // 切换收藏状态
@@ -153,13 +152,13 @@ Page({
     let getData = {
       Action: 'AddFavorite',
       ClassID: 3,
-      UserID: 1,
+      UserID: wx.getStorageSync('openId'),
       ID: id
     }
     // let list = this.data.list
     wc.get(getData, (json) => {
       if (json[isSuccess] === success) {
-        
+
       }
     })
   },

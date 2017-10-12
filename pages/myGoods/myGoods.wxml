@@ -11,7 +11,7 @@
           <view class='list_price '>
             <view class='display_inb price'>￥{{item.Price}}起</view>
             <view class='display_inb list_cv  fr' catchtap="collectCut" data-index="{{index}}" data-id="{{item.ProductID}}">
-              <image src="{{item.collect ? '/image/collecting.png':'/image/collect.png'}}" class='list_collect'></image>
+              <image src="{{item.IsFav ? '/image/collecting.png':'/image/collect.png'}}" class='list_collect'></image>
             </view>
           </view>
         </view>
