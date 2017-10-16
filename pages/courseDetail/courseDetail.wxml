@@ -3,7 +3,8 @@
   <image src='{{info.CoursePic}}'></image>
   <view class='type'>| {{info.CourseTypeName}} |</view>
   <view class='title'>{{info.CourseTitle}}</view>
-  <view class='desc'>{{info.CourseDesc}}</view>
+  <!-- <view class='desc'>{{info.CourseDesc}}</view> -->
+  <rich-text class='desc' type='text' nodes="{{info.CourseDesc}}"></rich-text>
   <view class='sale'>预售中</view>
 </view>
 
@@ -40,7 +41,7 @@
 
   <view class='list'>
     <view class='title'>课程介绍</view>
-    <text class='desc'>{{info.CourseDesc}}</text>
+    <rich-text class='desc' type='text' nodes="{{info.CourseDesc}}"></rich-text>
   </view>
   <view class='list'>
     <view class='title'>老师介绍</view>
@@ -49,11 +50,11 @@
   </view>
   <view class='list'>
     <view class='title'>主办方介绍</view>
-    <text class='desc'>{{info.SponsorDesc}}</text>
+    <rich-text class='desc' type='text' nodes="{{info.SponsorDesc}}"></rich-text>
   </view>
   <view class='list'>
     <view class='title'>翻译介绍</view>
-    <text class='desc'>{{info.TranslaterDesc}}</text>
+    <rich-text class='desc' type='text' nodes="{{info.TranslaterDesc}}"></rich-text>
   </view>
 
   <button class='button' open-type='contact'>我要咨询</button>
