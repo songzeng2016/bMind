@@ -9,6 +9,7 @@
     "pages/goodsDetail/goodsDetail",
     "pages/courseDetail/courseDetail",
     "pages/readDetail/readDetail",
+    "pages/myFav/myFav",
     "pages/myRead/myRead",
     "pages/myCourse/myCourse",
     "pages/myGoods/myGoods"
