@@ -30,6 +30,28 @@ Page({
     list,
   },
 
+  //  认证
+  doIdent: function (e) {
+    // https://sp.yangchengtech.com/bodymind/Handler/Handler.ashx?Action=ValiDate&encryptedData=&iv=&session_key=&UserID=8
+    let detail = e.detail
+    const that = this
+    let getData = {
+      Action: 'ValiDate',
+      encryptedData: detail.encryptedData,
+      iv: detail.iv,
+      session_key: wx.getStorageSync('session_key'),
+      UserID: wx.getStorageSync('openId'),
+    }
+
+    wc.get(getData, (json) => {
+      if (json[isSuccess] === success) {
+        that.setData({
+          'userInfo.isValidate': 1
+        })
+      }
+    })
+  },
+
   navtoList: function (e) {
     let data = e.currentTarget.dataset
     let path = data.path
@@ -40,8 +62,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      userInfo: app.globalData.userInfo
+    // this.setData({
+    //   userInfo: app.globalData.userInfo
+    // })
+
+    const that = this
+    let getData = {
+      Action: 'GetUsersDetail',
+      UserID: wx.getStorageSync('openId'),
+    }
+
+    wc.get(getData, (json) => {
+      if (json[isSuccess] === success) {
+        that.setData({
+          userInfo: json[data]
+        })
+      }
     })
   },
 

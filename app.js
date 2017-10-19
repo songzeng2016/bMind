@@ -21,6 +21,7 @@ App({
 
         that.wc.get(data, (json) => {
           wx.setStorageSync('openId', json.result || 1)
+          wx.setStorageSync('session_key', json.session_key)
           // that.openId = json.result
 
           // 获取用户信息
