@@ -20,7 +20,7 @@ App({
         }
 
         that.wc.get(data, (json) => {
-          wx.setStorageSync('openId', json.result || 1)
+          wx.setStorageSync('openid', json.openid || 1)
           wx.setStorageSync('session_key', json.session_key)
           // that.openId = json.result
 
@@ -33,7 +33,7 @@ App({
               let userInfo = res.userInfo
               let getData = {
                 Action: 'CheckUser',
-                openid: wx.getStorageSync('openId'),
+                openid: wx.getStorageSync('openid'),
                 nickName: userInfo.nickName,
                 avatarUrl: userInfo.avatarUrl,
                 gender: userInfo.gender, //性别 0：未知、1：男、2：女

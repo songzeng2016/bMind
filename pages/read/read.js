@@ -45,6 +45,11 @@ Page({
 
   },
 
+  // banner 跳转页面
+  navToUrl: function (e) {
+    wc.navigateTo(e.currentTarget.dataset.url)
+  },
+
   // 收藏状态切换
   collectCut: function (e) {
     var index = e.currentTarget.dataset.index;

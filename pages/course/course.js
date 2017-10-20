@@ -67,6 +67,11 @@ Page({
     ]
   },
 
+  // banner 跳转页面
+  navToUrl: function (e) {
+    wc.navigateTo(e.currentTarget.dataset.url)
+  },
+
   placeUnfold1: function (e) {
     // console.log(e)
     let page = this

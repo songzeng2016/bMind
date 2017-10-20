@@ -39,6 +39,11 @@ Page({
     ],
   },
 
+  // banner 跳转页面
+  navToUrl: function (e) {
+    wc.navigateTo(e.currentTarget.dataset.url)
+  },
+
   // 搜索列表
   searchList: function (e) {
     const that = this
