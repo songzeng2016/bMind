@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    pageIndex: 1,
     imgUrls: [
       "../../image/1.jpg",
       "../../image/2.jpg"
@@ -85,6 +86,7 @@ Page({
   // 获取列表
   getList: function ({ Action = 'GetNewsList', KeyWords = '', ClassID = 0, SortType = 0, TimeType = 0, pageSize = 10, pageIndex = 1 } = {}) {
     const that = this
+    let oldList = that.data.readList || []
     // list
     let getData = {
       Action,
@@ -99,6 +101,11 @@ Page({
 
     wc.get(getData, (json) => {
       if (json[isSuccess] === success) {
+        if (pageIndex > 1) {
+          json[data] = oldList.concat(json[data])
+        } else {
+          that.data.pageIndex = 1
+        }
         that.setData({
           readList: json[data]
         })
@@ -190,7 +197,8 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.data.pageIndex += 1
+    this.getList({ pageIndex: this.data.pageIndex })
   },
 
   /**
