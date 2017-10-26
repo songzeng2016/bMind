@@ -12,6 +12,43 @@ Page({
     tIndex: 0
   },
 
+  // 收藏状态切换
+  collectCut: function (e) {
+    let index = e.currentTarget.dataset.index;
+    let list = []
+
+    let tIndex = parseInt(this.data.tIndex)
+
+    if (tIndex == 0) {
+      list = this.data.readList
+      list[index].IsFav = !(list[index].IsFav || false);
+      this.setData({ readList: list })
+    } else if (tIndex == 1) {
+      list = this.data.Data
+      list[index].IsFav = !(list[index].IsFav || false);
+      this.setData({ Data: list })
+    } else if (tIndex == 2) {
+      list = this.data.goodList
+      list[index].IsFav = !(list[index].IsFav || false);
+      this.setData({ goodList: list })
+    }
+
+    // 切换收藏状态
+    let id = e.currentTarget.dataset.id
+    let getData = {
+      Action: 'AddFavorite',
+      ClassID: tIndex + 1,
+      UserID: wx.getStorageSync('openId'),
+      ID: id
+    }
+    // let list = this.data.list
+    wc.get(getData, (json) => {
+      if (json[isSuccess] === success) {
+
+      }
+    })
+  },
+
   // tab 切换
   switchTab: function (e) {
     const that = this

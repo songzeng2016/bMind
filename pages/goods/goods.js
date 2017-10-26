@@ -96,9 +96,6 @@ Page({
       }
     })
 
-    // list
-    this.getList()
-
     //引入条件筛选
     var filtration = new Filtration(this);
     filtration.bindEvents();
@@ -179,7 +176,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // list
+    this.getList()
   },
 
   /**
