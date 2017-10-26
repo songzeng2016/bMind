@@ -27,7 +27,7 @@
     <image class='arowR' src='/image/arowR.png'></image>
   </button>
 
-  <view class='list flex' wx:for='{{list}}' wx:key='*list' bindtap='navtoList' data-path="{{item.path}}">
+  <view wx:if='{{userInfo.AdminID > 0}}' class='list flex' wx:for='{{list}}' wx:key='*list' bindtap='navtoList' data-path="{{item.path}}">
     <view>
       <image class='icon' src='/image/mine{{index + 3}}.png'></image>
       <text class='text'>{{item.title}}</text>

@@ -4,7 +4,7 @@
   <view class='type'>| {{info.CourseTypeName}} |</view>
   <view class='title'>{{info.CourseTitle}}</view>
   <!-- <view class='desc'>{{info.CourseDesc}}</view> -->
-  <rich-text class='desc' type='text' nodes="{{info.CourseDesc}}"></rich-text>
+  <!-- <rich-text class='desc' type='text' nodes="{{info.CourseDesc}}"></rich-text> -->
   <view class='sale'>预售中</view>
 </view>
 

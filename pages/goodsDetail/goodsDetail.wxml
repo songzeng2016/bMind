@@ -16,7 +16,8 @@
   </view>
   <view class='inspiration'>
     <view class='title'>详细内容</view>
-    <view class='detail'>{{info.ProductDesc}}</view>
+    <!-- <view class='detail'>{{info.ProductDesc}}</view> -->
+    <rich-text class='detail' type='text' nodes="{{info.ProductDesc}}"></rich-text>
     </view>
     <!-- <view>
       <view class='title'>产品详图</view>
