@@ -20,22 +20,12 @@ Page({
       {
         placeSortSelect: "全部分类",
         placePurSortOpen: true,
-        placeSortData: [
-          { id: 100, name: '全部分类', checked: 'true' },
-          { id: 101, name: '精品推存' },
-          { id: 102, name: '文艺青年' },
-          { id: 103, name: '炫酷风格' }
-        ],
+        placeSortData: [],
       },
       {
         placeSortSelect: "产地",
         placePurSortOpen: true,
-        placeSortData: [
-          { id: 100, name: '产地', checked: 'true' },
-          { id: 101, name: '北京' },
-          { id: 102, name: '天津' },
-          { id: 103, name: '上海' }
-        ],
+        placeSortData: [],
       }
     ],
   },
@@ -47,10 +37,12 @@ Page({
 
   // 搜索列表
   searchList: function (e) {
-    const that = this
     let content = e.detail.value
-
-    this.getList({ KeyWords: content })
+    let param = this.data.param || {}
+    param.pageIndex = 1
+    param.KeyWords = content
+    this.getList(param)
+    this.setData({ param })
   },
 
   // 获取列表
@@ -77,6 +69,7 @@ Page({
         } else {
           that.data.pageIndex = 1
         }
+        wx.setStorageSync('goodsParam', that.data.param || {})
         that.setData({
           goodList: json[data]
         })
@@ -116,7 +109,6 @@ Page({
     wc.get(dData, (json) => {
       if (json[isSuccess] === success) {
         json.List.unshift({
-          ClassID: 0,
           ClassName: '全部分类',
           checked: 'true'
         })
@@ -134,8 +126,8 @@ Page({
     wc.get(aData, (json) => {
       if (json[isSuccess] === success) {
         json.List.unshift({
-          ClassID: 0,
           SortID: 0,
+          AreaID: 0,
           ClassName: '产地',
           checked: 'true'
         })
@@ -184,7 +176,7 @@ Page({
    */
   onShow: function () {
     // list
-    this.getList()
+    this.getList(wx.getStorageSync('goodsParam'))
   },
 
   /**
@@ -213,7 +205,9 @@ Page({
    */
   onReachBottom: function () {
     this.data.pageIndex += 1
-    this.getList({ pageIndex: this.data.pageIndex })
+    let param = this.data.param || {}
+    param.pageIndex = this.data.pageIndex
+    this.getList(param)
   },
 
   /**

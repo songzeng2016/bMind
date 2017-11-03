@@ -18,28 +18,23 @@ Page({
       {
         placeSortSelect: "全部分类",
         placePurSortOpen: true,
-        placeSortData: [
-          { id: 100, name: '全部分类', checked: 'true' },
-          { id: 101, name: '文艺青年' },
-          { id: 102, name: '炫酷风格' },
-          { id: 103, name: '精品推存' }
-        ],
+        placeSortData: [],
       },
       {
         placeSortSelect: "最热",
         placePurSortOpen: true,
         placeSortData: [
-          { ClassID: 0, SortType: 0, ClassName: '最热', checked: 'true' },
-          { ClassID: 0, SortType: 1, ClassName: '最新' }
+          { SortType: 0, ClassName: '最热', checked: 'true' },
+          { SortType: 1, ClassName: '最新' }
         ],
       },
       {
         placeSortSelect: "全部时间",
         placePurSortOpen: true,
         placeSortData: [
-          { ClassID: 0, TimeType: 0, ClassName: '全部时间', checked: 'true' },
-          { ClassID: 0, TimeType: 1, ClassName: '一周内' },
-          { ClassID: 0, TimeType: 2, ClassName: '一月内' }
+          { TimeType: 0, ClassName: '全部时间', checked: 'true' },
+          { TimeType: 1, ClassName: '一周内' },
+          { TimeType: 2, ClassName: '一月内' }
         ],
       }
     ],
@@ -77,10 +72,12 @@ Page({
 
   // 搜索列表
   searchList: function (e) {
-    const that = this
     let content = e.detail.value
-
-    this.getList({ KeyWords: content })
+    let param = this.data.param || {}
+    param.pageIndex = 1
+    param.KeyWords = content
+    this.getList(param)
+    this.setData({ param })
   },
 
   // 获取列表
@@ -106,6 +103,7 @@ Page({
         } else {
           that.data.pageIndex = 1
         }
+        wx.setStorageSync('readParam', that.data.param || {})
         that.setData({
           readList: json[data]
         })
@@ -169,7 +167,7 @@ Page({
    */
   onShow: function () {
     // list
-    this.getList()
+    this.getList(wx.getStorageSync('readParam'))
   },
 
   /**
@@ -198,7 +196,9 @@ Page({
    */
   onReachBottom: function () {
     this.data.pageIndex += 1
-    this.getList({ pageIndex: this.data.pageIndex })
+    let param = this.data.param || {}
+    param.pageIndex = this.data.pageIndex
+    this.getList(param)
   },
 
   /**

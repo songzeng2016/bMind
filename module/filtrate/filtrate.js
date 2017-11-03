@@ -1,3 +1,6 @@
+const app = getApp()
+const { wc } = app
+
 class Filtration {
   // 构造
   constructor(page) {
@@ -22,7 +25,7 @@ class Filtration {
         let val = e.detail.value;
         var list = page.data.list
         var index = e.currentTarget.dataset.index;
-        console.log(e)
+        // console.log(e)
         list[index].placeSortSelect = val
         for (let i in list[index].placeSortData) {
           list[index].placeSortData[i].checked = false
@@ -36,10 +39,14 @@ class Filtration {
       page.supSortChangeItemFn = (e) => {
         //必须 用currentTarget 
         var curItem = e.currentTarget.dataset.item;
-        console.log(curItem);
-        page.getList(curItem)
+        var param = page.data.param || {}
+        param = wc.extend(param, curItem)
+        param.pageIndex = 1
+        console.log(param);
+        page.getList(param)
         page.setData({
-          supSortSelectId: curItem.ClassID
+          supSortSelectId: curItem.ClassID,
+          param
         });
       }
     //其它事件

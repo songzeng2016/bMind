@@ -19,39 +19,34 @@ Page({
       {
         placeSortSelect: "全部分类",
         placePurSortOpen: true,
-        placeSortData: [
-          { id: 100, name: '全部分类', checked: 'true' },
-          { id: 101, name: '文艺青年' },
-          { id: 102, name: '炫酷风格' },
-          { id: 103, name: '精品推存' }
-        ],
+        placeSortData: [],
       },
       {
         placeSortSelect: "形式",
         placePurSortOpen: true,
         placeSortData: [
-          { ClassID: 0, CourseType: 0, ClassName: '形式', checked: 'true' },
-          { ClassID: 0, CourseType: 1, ClassName: '微课' },
-          { ClassID: 0, CourseType: 2, ClassName: '工作坊' },
-          { ClassID: 0, CourseType: 3, ClassName: '讲课' },
-          { ClassID: 0, CourseType: 4, ClassName: '旅程' }
+          { CourseType: 0, ClassName: '形式', checked: 'true' },
+          { CourseType: 1, ClassName: '微课' },
+          { CourseType: 2, ClassName: '工作坊' },
+          { CourseType: 3, ClassName: '讲课' },
+          { CourseType: 4, ClassName: '旅程' }
         ],
       },
       {
         placeSortSelect: "最热",
         placePurSortOpen: true,
         placeSortData: [
-          { ClassID: 0, SortType: 0, ClassName: '最热', checked: 'true' },
-          { ClassID: 0, SortType: 1, ClassName: '最新' }
+          { SortType: 0, ClassName: '最热', checked: 'true' },
+          { SortType: 1, ClassName: '最新' }
         ],
       },
       {
         placeSortSelect: "全部时间",
         placePurSortOpen: true,
         placeSortData: [
-          { ClassID: 0, TimeType: 0, ClassName: '全部时间', checked: 'true' },
-          { ClassID: 0, TimeType: 1, ClassName: '一周内' },
-          { ClassID: 0, TimeType: 2, ClassName: '一月内' }
+          { TimeType: 0, ClassName: '全部时间', checked: 'true' },
+          { TimeType: 1, ClassName: '一周内' },
+          { TimeType: 2, ClassName: '一月内' }
         ],
       }
     ],
@@ -59,11 +54,7 @@ Page({
       {
         placeSortSelect: "城市",
         placePurSortOpen: true,
-        placeSortData: [
-          { ClassID: 0, TimeType: 0, ClassName: '全部时间', checked: 'true' },
-          { ClassID: 0, TimeType: 1, ClassName: '一周内' },
-          { ClassID: 0, TimeType: 2, ClassName: '一月内' }
-        ],
+        placeSortData: [],
       },
     ]
   },
@@ -106,10 +97,13 @@ Page({
     let page = this
     //必须 用currentTarget 
     var curItem = e.currentTarget.dataset.item;
-    console.log(curItem);
-    page.getList(curItem)
+    var param = page.data.param || {}
+    param = wc.extend(param, curItem)
+    console.log(param);
+    page.getList(param)
     page.setData({
-      supSortSelectId1: curItem.ClassID
+      supSortSelectId: curItem.ClassID,
+      param
     });
   },
 
@@ -139,10 +133,12 @@ Page({
 
   // 搜索列表
   searchList: function (e) {
-    const that = this
     let content = e.detail.value
-
-    this.getList({ KeyWords: content })
+    let param = this.data.param || {}
+    param.pageIndex = 1
+    param.KeyWords = content
+    this.getList(param)
+    this.setData({ param })
   },
 
   // 获取列表
@@ -170,6 +166,7 @@ Page({
         } else {
           that.data.pageIndex = 1
         }
+        wx.setStorageSync('courseParam', that.data.param || {})
         that.setData({
           Data: json[data]
         })
@@ -231,7 +228,6 @@ Page({
       if (json[isSuccess] === success) {
         json.List.unshift({
           AreaID: 0,
-          ClassID: 0,
           ClassName: '城市',
           checked: 'true'
         })
@@ -256,7 +252,7 @@ Page({
    */
   onShow: function () {
     // list
-    this.getList()
+    this.getList(wx.getStorageSync('courseParam'))
   },
 
   /**
@@ -285,7 +281,9 @@ Page({
    */
   onReachBottom: function () {
     this.data.pageIndex += 1
-    this.getList({ pageIndex: this.data.pageIndex })
+    let param = this.data.param || {}
+    param.pageIndex = this.data.pageIndex
+    this.getList(param)
   },
 
   /**
